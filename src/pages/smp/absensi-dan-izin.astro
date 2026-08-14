@@ -1,0 +1,86 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+---
+
+<RuleLayout unit="smp" slug="absensi-dan-izin">
+  <IntiAturan>
+    <li>Check-in mandiri via Dinar App saat tiba di sekolah; tanpa keterangan hingga <strong>pukul 10.00</strong> → otomatis <strong>Alpha</strong>.</li>
+    <li>Batas alpha: <strong>15% dari hari efektif belajar</strong> per semester — melebihi batas berdampak pada ujian dan rapor.</li>
+    <li>Izin disampaikan ke wali kelas <strong>paling lambat pukul 10.00</strong> hari itu (mendadak) atau H-1 (terencana).</li>
+    <li>Surat keterangan sakit dari dokter diunggah ke Dinar App paling lambat H+1.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 16" judul="Mekanisme Absensi Harian via Dinar App" />
+  <p>
+    Al Akhyar menerapkan sistem absensi digital berbasis Dinar App sebagai <strong>satu-satunya metode pencatatan kehadiran yang sah</strong>. Prosedur absensi pagi:
+  </p>
+  <ol>
+    <li>Siswa melakukan scan/check-in absensi mandiri melalui Dinar App ketika telah tiba di sekolah.</li>
+    <li>Siswa yang belum melakukan absensi pada waktu yang ditentukan otomatis tercatat <strong>“Belum Hadir”</strong>.</li>
+    <li>Bila status “Belum Hadir” tidak diperbarui dengan keterangan izin/sakit hingga <strong>pukul 10.00 WITA</strong>, sistem otomatis mengubahnya menjadi <strong>“Alpha”</strong>.</li>
+  </ol>
+  <p>Orang tua menerima notifikasi real-time melalui Dinar App setiap ada perubahan status kehadiran anak.</p>
+  <p class="text-[14px] text-slate-500">
+    Pantau dan kelola kehadiran anak melalui fitur E-Absent di <a href="https://dinar.alakhyar.sch.id" target="_blank" rel="noopener">dinar.alakhyar.sch.id</a>.
+  </p>
+
+  <PasalHeading pasal="Pasal 17" judul="Kategori Status Kehadiran" />
+  <table class="table-rule">
+    <caption class="sr-only">Definisi dan mekanisme pelaporan setiap status kehadiran</caption>
+    <thead>
+      <tr><th>Status</th><th>Definisi</th><th>Mekanisme Pelaporan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Status"><strong>Hadir</strong></td>
+        <td data-label="Definisi">Siswa hadir dan absen tepat waktu</td>
+        <td data-label="Pelaporan">Absensi mandiri via Dinar App</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Terlambat</strong></td>
+        <td data-label="Definisi">Hadir melewati batas waktu yang ditetapkan</td>
+        <td data-label="Pelaporan">Lapor ke piket; dicatat manual di Dinar App</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Izin</strong></td>
+        <td data-label="Definisi">Tidak hadir dengan alasan yang disetujui (keperluan keluarga, acara resmi, dll.)</td>
+        <td data-label="Pelaporan">Orang tua mengajukan izin via Dinar App sebelum pukul 10.00</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Sakit</strong></td>
+        <td data-label="Definisi">Tidak hadir karena sakit dengan bukti (surat dokter/keterangan orang tua)</td>
+        <td data-label="Pelaporan">Keterangan diunggah via Dinar App maks. H+1</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Alpha</strong></td>
+        <td data-label="Definisi">Tidak hadir tanpa keterangan yang sah</td>
+        <td data-label="Pelaporan">Otomatis tercatat; Poin Akhlak berkurang</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <PasalHeading pasal="Pasal 18" judul="Batas Ketidakhadiran dan Konsekuensi" />
+  <p>
+    Batas maksimal ketidakhadiran tanpa keterangan (alpha) dalam satu semester adalah <strong>15% dari hari efektif belajar</strong>. Melebihi batas ini dapat berdampak:
+  </p>
+  <ul>
+    <li>Tidak diizinkan mengikuti Asesmen Sumatif Akhir Semester.</li>
+    <li>Nilai semester tidak diproses / dinyatakan tidak lengkap.</li>
+    <li>Tidak dapat menerima rapor tanpa penyelesaian administrasi.</li>
+  </ul>
+  <ol>
+    <li>Keterlambatan lebih dari <strong>3 kali dalam sebulan</strong> ditindaklanjuti dengan pemanggilan orang tua.</li>
+    <li>Ketidakhadiran <strong>3 hari berturut-turut tanpa keterangan</strong> langsung mengakibatkan pemanggilan orang tua dan pembinaan kesiswaan.</li>
+    <li>Rekap kehadiran menjadi salah satu komponen laporan perkembangan peserta didik di E-Rapor.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 19" judul="Prosedur Izin dan Surat Keterangan" />
+  <ol>
+    <li>Izin tidak hadir diajukan orang tua/wali melalui Dinar App, grup WA kelas, atau pesan langsung kepada wali kelas <strong>paling lambat pukul 10.00 WITA</strong> di hari yang sama (keperluan mendadak) atau <strong>H-1</strong> (izin terencana).</li>
+    <li>Surat keterangan sakit dari dokter wajib diunggah ke Dinar App <strong>paling lambat H+1</strong> setelah siswa kembali hadir.</li>
+    <li>Izin lebih dari 3 hari berturut-turut wajib dikonfirmasi langsung ke kepala sekolah atau wakil kepala sekolah.</li>
+    <li>Izin kegiatan eksternal (lomba, pertandingan, dll.) atas nama sekolah harus disetujui resmi kepala sekolah dan <strong>tidak dihitung alpha</strong>.</li>
+  </ol>
+</RuleLayout>

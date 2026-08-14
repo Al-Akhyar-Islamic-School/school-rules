@@ -1,0 +1,171 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DriveCta from '../components/DriveCta.astro';
+import Icon from '../components/Icon.astro';
+import { site, units } from '../data/units';
+import logoWhite from '../assets/logo-sekolah-white.png';
+
+const fotos = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/jenjang-*.jpg',
+  { eager: true }
+);
+const logos = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/logo-*.png',
+  { eager: true }
+);
+
+const globalLinks = [
+  {
+    href: '/tentang/',
+    icon: 'info',
+    judul: 'Tentang Peraturan Ini',
+    desc: 'Pengantar, visi-misi, dasar hukum, dan pemberlakuan peraturan.',
+  },
+  {
+    href: '/dokumen/',
+    icon: 'file-text',
+    judul: 'Dokumen & Surat Pernyataan',
+    desc: 'Unduh dokumen lengkap dan pahami surat pernyataan siswa-orang tua.',
+  },
+  {
+    href: '/kontak/',
+    icon: 'phone',
+    judul: 'Kontak & Pengaduan',
+    desc: 'Kanal komunikasi resmi, jam layanan, dan alur pengaduan.',
+  },
+];
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="bg-brand-gradient text-white relative overflow-hidden" style="border-radius: 0 0 24px 24px;">
+    <div class="absolute inset-0 pattern-dots pointer-events-none" aria-hidden="true"></div>
+    <div class="container-ak py-12 sm:py-20 text-center relative">
+      <Image
+        src={logoWhite}
+        alt={site.sekolah}
+        width={288}
+        height={162}
+        class="h-16 sm:h-20 w-auto mx-auto mb-6"
+        loading="eager"
+      />
+      <p class="text-white/80 text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.1em] mb-2">
+        {site.sekolah} · Tahun Ajaran {site.tahunAjaran}
+      </p>
+      <h1 class="font-display font-bold text-[32px] sm:text-[44px] leading-tight max-w-[640px] mx-auto">
+        Peraturan Sekolah
+      </h1>
+      <p class="text-white/85 text-[15px] sm:text-lg max-w-[560px] mx-auto mt-4 leading-relaxed">
+        Satu rumah untuk semua tata tertib {site.sekolah} — ditulis ringkas agar mudah
+        dipahami siswa dan orang tua, tanpa mengurangi isi aturannya.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href="#pilih-unit" class="btn bg-white text-primary-600 hover:bg-slate-100 shadow-md">
+          Pilih Unit
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a
+          href={site.driveUrl}
+          target="_blank"
+          rel="noopener"
+          class="btn border border-white/40 text-white hover:bg-white/10"
+        >
+          Dokumen Lengkap
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kartu unit -->
+  <section id="pilih-unit" class="container-ak mt-12 sm:mt-16" style="scroll-margin-top: 90px">
+    <div class="text-center mb-8">
+      <p class="eyebrow">Empat Jenjang</p>
+      <h2 class="font-display font-bold text-[24px] sm:text-[30px] text-ink mt-1">
+        Pilih Unit Ananda
+      </h2>
+      <p class="text-slate-500 mt-2 max-w-[480px] mx-auto text-[15px]">
+        Setiap unit memiliki peraturan tersendiri yang disesuaikan dengan usia dan
+        kebutuhan peserta didik.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      {
+        units.map((u, i) => {
+          const foto = fotos[`../assets/${u.foto}.jpg`]?.default;
+          const logo = logos[`../assets/${u.logo}.png`]?.default;
+          return (
+            <a
+              href={`/${u.slug}/`}
+              class="card-ak overflow-hidden group flex flex-col"
+              data-reveal
+              style={`--reveal-delay: ${i * 70}ms`}
+            >
+              <div class="relative h-36 sm:h-40 overflow-hidden">
+                {foto && (
+                  <Image
+                    src={foto}
+                    alt={`Suasana belajar ${u.lengkap}`}
+                    width={640}
+                    height={360}
+                    class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                  />
+                )}
+                <div
+                  class="absolute inset-x-0 bottom-0 h-1.5"
+                  style={`background: ${u.warna}`}
+                />
+              </div>
+              <div class="p-5 flex-1 flex flex-col">
+                <div class="flex items-center gap-3 mb-2">
+                  {logo && (
+                    <Image src={logo} alt="" width={96} height={54} class="h-8 w-auto" loading="lazy" />
+                  )}
+                  <span
+                    class="chip text-white"
+                    style={`background: ${u.warna}`}
+                  >
+                    {u.slug.toUpperCase()}
+                  </span>
+                </div>
+                <p class="font-display font-bold text-ink text-[17px] leading-snug">
+                  {u.lengkap}
+                </p>
+                <p class="text-[13px] text-slate-500 mt-1">{u.kelas}</p>
+                <p
+                  class="mt-4 text-sm font-semibold inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all"
+                  style={`color: ${u.warna}`}
+                >
+                  Baca Peraturan
+                  <Icon name="arrow-right" size={16} />
+                </p>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <!-- Tautan global -->
+  <section class="container-ak mt-12 sm:mt-16">
+    <div class="grid sm:grid-cols-3 gap-4">
+      {
+        globalLinks.map((g) => (
+          <a href={g.href} class="card-ak p-5 flex items-start gap-4 group">
+            <div class="w-11 h-11 rounded-[12px] bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+              <Icon name={g.icon} size={22} />
+            </div>
+            <div>
+              <p class="font-semibold text-ink group-hover:text-primary-600 transition-colors">{g.judul}</p>
+              <p class="text-[13px] text-slate-500 mt-1 leading-relaxed">{g.desc}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <DriveCta />
+  </section>
+</BaseLayout>

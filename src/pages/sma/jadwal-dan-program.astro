@@ -1,0 +1,57 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import JadwalTimeline from '../../components/JadwalTimeline.astro';
+
+const jadwal = [
+  { waktu: '07.00 – 07.30', kegiatan: 'Upacara/apel pagi, Morning Adab, DUTA (Dhuha, Tadarrus), senam bersama, dan Literasi Al-Kahfi', ket: 'Wajib seluruh siswa' },
+  { waktu: '07.30 – 10.10', kegiatan: 'Pembelajaran sesi 1', ket: 'Sesuai jadwal mapel' },
+  { waktu: '10.10 – 10.30', kegiatan: 'Istirahat 1', ket: 'Wajib seluruh siswa' },
+  { waktu: '10.30 – 12.20', kegiatan: 'Pembelajaran sesi 2', ket: 'Sesuai jadwal mapel' },
+  { waktu: '12.20 – 13.20', kegiatan: 'Istirahat 2: Sholat Dzuhur berjamaah + makan siang', ket: 'Wajib seluruh siswa' },
+  { waktu: '13.20 – 15.20', kegiatan: 'Pembelajaran sesi 3', ket: 'Sesuai jadwal mapel' },
+  { waktu: '15.20 – 17.00', kegiatan: 'Sholat Ashar + Ekstrakurikuler', ket: 'Wajib seluruh siswa' },
+];
+---
+
+<RuleLayout unit="sma" slug="jadwal-dan-program">
+  <IntiAturan>
+    <li>Hari sekolah berlangsung pukul <strong>07.00–17.00</strong>, ditutup Sholat Ashar dan ekstrakurikuler.</li>
+    <li>Program unggulan: Tahfidz &amp; Tahsin, pembiasaan ibadah, tiga bahasa asing, leadership, hingga <strong>Campus Tour dan Bimbingan SNBT</strong>.</li>
+    <li>Mentoring pekanan berjalan dalam kelompok kecil <strong>8–12 siswa</strong> bersama mentor tetap.</li>
+    <li>Siswa yang pulang sendiri mengendarai motor <strong>wajib memakai helm SNI</strong> dan mematuhi aturan lalu lintas.</li>
+    <li>Penjemput berpakaian sopan dan menutup aurat; dilarang merokok di seluruh area sekolah.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 41" judul="Jadwal Kegiatan Harian SMA" />
+  <JadwalTimeline items={jadwal} />
+
+  <PasalHeading pasal="Pasal 42" judul="Program Unggulan Khusus SMA" />
+  <ul>
+    <li><strong>Program Tahfidz dan Tahsin Al-Qur'an</strong> — siswa dibimbing membaca Al-Qur'an dengan tartil (sesuai tajwid) dan memiliki target hafalan (juz) tertentu sebelum lulus. Siswa yang mencapai target atau lebih mengikuti ujian tahfidz/ujian beasiswa tahfidz sebagai bentuk pertanggungjawaban, dengan apresiasi beasiswa potongan SPP hingga <strong>100%</strong>.</li>
+    <li><strong>Pembiasaan Ibadah dan Adab (Islamic Character Building)</strong> — pendidikan adab dan akhlak terintegrasi dalam rutinitas harian: sholat Dhuha, Dzuhur, dan Ashar berjamaah serta doa-doa harian; ditambah mentoring kelompok kecil (halaqah) bersama guru pendamping untuk membahas materi keislaman, aqidah, dan penyelesaian masalah remaja.</li>
+    <li><strong>Pengembangan Bahasa Asing</strong> — pembiasaan Bahasa Inggris, Bahasa Arab, dan Bahasa Jepang pada hari-hari tertentu; siswa didorong berkomunikasi dalam ketiga bahasa tersebut. Tersedia Club Bahasa bagi yang ingin mendalami debat, pidato (speech), atau storytelling.</li>
+    <li><strong>Program Leadership</strong> — OSIS, PMR, dan Pramuka; siswa diwajibkan mengikuti salah satu bentuk kegiatan kepemimpinan sekolah.</li>
+    <li><strong>Campus Tour SMA dan Bimbingan SNBT</strong> — persiapan menuju perguruan tinggi.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 43" judul="Mentoring dan Bimbingan SMA" />
+  <ol>
+    <li>Setiap siswa mendapatkan pendampingan dari wali kelas sebagai pendamping utama.</li>
+    <li>Mentoring pekanan dilaksanakan dalam kelompok kecil <strong>8–12 siswa</strong> bersama mentor tetap.</li>
+    <li>Wali kelas melakukan evaluasi karakter harian dan komunikasi rutin dengan orang tua.</li>
+    <li>Layanan Bimbingan Konseling (BK) tersedia untuk semua siswa SMA.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 44" judul="Ketentuan Kepulangan dan Penjemputan" />
+  <ol>
+    <li>Siswa dipulangkan sesuai jadwal yang telah ditetapkan sekolah.</li>
+    <li>Orang tua/wali yang menjemput wajib menunggu di area penjemputan yang telah ditentukan.</li>
+    <li>Siswa yang pulang sendiri dengan mengendarai motor <strong>wajib menggunakan helm SNI</strong> dan mematuhi peraturan berlalu lintas.</li>
+    <li>Perubahan penjemput wajib dikonfirmasi kepada wali kelas melalui Dinar App/WA japri.</li>
+    <li>Penjemput wajib berpakaian sopan dan menutup aurat sesuai syariat Islam.</li>
+    <li>Dilarang merokok di seluruh area sekolah.</li>
+    <li>Kendaraan diparkir pada tempat yang telah ditentukan dan tidak menghalangi akses keluar-masuk sekolah.</li>
+  </ol>
+</RuleLayout>

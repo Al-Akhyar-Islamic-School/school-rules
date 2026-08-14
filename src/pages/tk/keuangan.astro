@@ -1,0 +1,105 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+---
+
+<RuleLayout unit="tk" slug="keuangan">
+  <IntiAturan>
+    <li>SPP dibayarkan setiap <strong>tanggal 1–25</strong> melalui <strong>Virtual Account</strong> peserta didik di Dinar App.</li>
+    <li>Melewati tanggal 25, pembayaran otomatis berstatus <strong>tunggakan</strong>.</li>
+    <li>Tunggakan SPP lebih dari <strong>3 bulan</strong>: akses kegiatan berbayar dibatasi dan rapor tidak dapat diambil.</li>
+    <li>Kesulitan keuangan? Segera hubungi sekolah — <strong>kesepakatan cicilan resmi</strong> menjaga hak akademik ananda tetap utuh.</li>
+  </IntiAturan>
+
+  <blockquote class="not-prose rounded-[14px] p-5 my-6" style="background: var(--color-amber-100); border-left: 4px solid var(--color-amber-500);">
+    <p class="font-bold text-[14px] mb-1" style="color: var(--color-amber-600);">Perhatian Penting</p>
+    <p class="text-[14.5px] leading-relaxed" style="color: var(--color-amber-600);">
+      Kelancaran administrasi keuangan berkaitan langsung dengan hak-hak akademik siswa,
+      termasuk akses ujian, kegiatan sekolah, dan pengambilan dokumen resmi. Sekolah
+      menerapkan kebijakan ini secara konsisten demi keberlangsungan mutu layanan pendidikan.
+    </p>
+  </blockquote>
+
+  <PasalHeading pasal="Pasal 15" judul="Jenis Kewajiban Keuangan" />
+  <table class="table-rule">
+    <caption class="sr-only">Jenis biaya sekolah dan periode pembayarannya</caption>
+    <thead>
+      <tr><th>Jenis Biaya</th><th>Periode</th><th>Keterangan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Jenis"><strong>SPP</strong> (Sumbangan Pembinaan Pendidikan)</td>
+        <td data-label="Periode">Bulanan</td>
+        <td data-label="Keterangan">Dibayarkan paling lambat tanggal 1–25 setiap bulan</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Uang Tahunan / Dana Pengembangan</td>
+        <td data-label="Periode">Tahunan (awal tahun ajaran)</td>
+        <td data-label="Keterangan">Sesuai kesepakatan awal pendaftaran</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Biaya Seragam</td>
+        <td data-label="Periode">Saat penerimaan / penggantian</td>
+        <td data-label="Keterangan">Sesuai ketentuan Panduan Seragam unit</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Biaya Puncak Karya &amp; Buku Tahunan</td>
+        <td data-label="Periode">Akhir tahun ajaran</td>
+        <td data-label="Keterangan">Sesuai ketentuan tanggal Puncak Karya</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <PasalHeading pasal="Pasal 16" judul="Mekanisme Pembayaran" />
+  <ol>
+    <li>Pembayaran seluruh kewajiban keuangan dilakukan melalui <strong>Virtual Account peserta didik</strong> yang diinformasikan melalui Dinar App.</li>
+    <li>Batas waktu pembayaran SPP adalah setiap <strong>tanggal 1–25</strong>. Keterlambatan melewati tanggal tersebut otomatis berstatus tunggakan.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 17" judul="Dampak Tunggakan terhadap Hak Akademik" />
+  <p>
+    Siswa yang memiliki tunggakan keuangan akan mendapatkan pemberitahuan secara berkala
+    melalui Dinar App kepada orang tua/wali. Ketentuan hak akademik berdasarkan status keuangan:
+  </p>
+  <table class="table-rule">
+    <caption class="sr-only">Dampak tunggakan berdasarkan kondisinya</caption>
+    <thead>
+      <tr><th>Kondisi Tunggakan</th><th>Dampak</th><th>Catatan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Kondisi">SPP ≤ 1 bulan</td>
+        <td data-label="Dampak">Pemberitahuan via Dinar App</td>
+        <td data-label="Catatan">Tidak ada pembatasan hak akademik</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi"><strong>SPP &gt; 3 bulan</strong></td>
+        <td data-label="Dampak">Pembatasan akses kegiatan berbayar; tidak dapat mengambil rapor</td>
+        <td data-label="Catatan">Wajib menghadap kepala sekolah &amp; bendahara untuk solusi</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi">Tunggakan uang kegiatan</td>
+        <td data-label="Dampak">Tidak dapat mengikuti kegiatan terkait</td>
+        <td data-label="Catatan">Kegiatan: outing, projek, festival, dll.</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi">Tunggakan saat akhir tahun</td>
+        <td data-label="Dampak">Ijazah dan dokumen resmi ditahan hingga lunas</td>
+        <td data-label="Catatan">Berlaku untuk kelas akhir jenjang (TK/SD/SMP/SMA)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-[14px] text-slate-500">
+    Kartu ujian siswa hanya muncul di Dinar App apabila seluruh kewajiban keuangan lunas
+    atau telah ada kesepakatan resmi dengan pihak sekolah.
+  </p>
+
+  <PasalHeading pasal="Pasal 18" judul="Prosedur Penyelesaian Tunggakan" />
+  <ol>
+    <li>Orang tua yang mengalami kesulitan keuangan dianjurkan <strong>segera menghubungi</strong> kepala sekolah atau bendahara sebelum tunggakan bertambah.</li>
+    <li>Sekolah membuka kemungkinan cicilan atau penundaan pembayaran berdasarkan permohonan tertulis dan pertimbangan kondisi yang dapat diverifikasi.</li>
+    <li>Kesepakatan cicilan dibuat secara tertulis dan ditandatangani oleh orang tua dan kepala sekolah.</li>
+    <li>Siswa yang memiliki kesepakatan cicilan resmi <strong>tidak mengalami pembatasan hak akademik</strong> selama kesepakatan dipatuhi.</li>
+  </ol>
+</RuleLayout>

@@ -1,0 +1,34 @@
+---
+// Larangan terkait moral & syariat — pelanggaran berat (Poinku).
+// TK memakai versi ringkas (4 butir); unit lain 7 butir.
+interface Props {
+  variant?: 'lengkap' | 'tk';
+}
+const { variant = 'lengkap' } = Astro.props;
+---
+
+<p>
+  Siswa dilarang melakukan perbuatan yang bertentangan dengan syariat Islam dan
+  nilai-nilai Al Akhyar. Larangan berikut bersifat <strong>mutlak</strong> dan termasuk
+  kategori pelanggaran berat:
+</p>
+{
+  variant === 'tk' ? (
+    <ul>
+      <li>Melakukan tindak kekerasan fisik atau verbal terhadap siapapun.</li>
+      <li>Terlibat dalam kegiatan yang bertentangan dengan aqidah Islam.</li>
+      <li>Mencuri atau mengambil barang milik orang lain dengan sengaja.</li>
+      <li>Bullying dalam bentuk apapun — fisik, verbal, relasional, maupun <em>cyberbullying</em>.</li>
+    </ul>
+  ) : (
+    <ul>
+      <li>Berpacaran atau menjalin hubungan romantis di lingkungan sekolah.</li>
+      <li>Membawa, menyimpan, atau mengonsumsi rokok/vape/narkoba/minuman keras.</li>
+      <li>Melakukan tindak kekerasan fisik atau verbal terhadap siapapun.</li>
+      <li>Membawa atau menyebarkan konten pornografi.</li>
+      <li>Terlibat dalam kegiatan yang bertentangan dengan aqidah Islam.</li>
+      <li>Mencuri, menipu, atau melakukan tindakan kriminal.</li>
+      <li>Bullying berat dalam bentuk apapun — fisik, verbal, relasional, maupun <em>cyberbullying</em>.</li>
+    </ul>
+  )
+}

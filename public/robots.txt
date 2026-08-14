@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://schoolrules.alakhyar.sch.id/sitemap-index.xml

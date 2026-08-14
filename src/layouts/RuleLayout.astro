@@ -1,0 +1,64 @@
+---
+// Layout halaman aturan (bab) per unit: chip nav, breadcrumb,
+// mini-hero warna unit, konten artikel, prev/next, CTA Drive.
+import BaseLayout from './BaseLayout.astro';
+import ChipNav from '../components/ChipNav.astro';
+import PrevNext from '../components/PrevNext.astro';
+import DriveCta from '../components/DriveCta.astro';
+import { getUnit, RULE_PAGES } from '../data/units';
+import type { UnitSlug } from '../data/units';
+
+interface Props {
+  unit: UnitSlug;
+  slug: string;
+}
+const { unit: unitSlug, slug } = Astro.props;
+const unit = getUnit(unitSlug);
+const page = RULE_PAGES.find((p) => p.slug === slug);
+if (!page) throw new Error(`Halaman aturan tidak dikenal: ${slug}`);
+---
+
+<BaseLayout
+  title={`${page.judul} — ${unit.nama}`}
+  description={`${page.desc} Peraturan ${unit.lengkap} Tahun Ajaran 2026/2027.`}
+  unit={unit.slug}
+>
+  <ChipNav unit={unit} activeSlug={slug} />
+
+  <article class="container-ak">
+    <div class="max-w-[720px] mx-auto">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-1.5 text-[13px] text-slate-500 mt-6 no-print" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-primary-600">Beranda</a>
+        <span aria-hidden="true">›</span>
+        <a href={`/${unit.slug}/`} class="hover:text-primary-600">{unit.nama}</a>
+        <span aria-hidden="true">›</span>
+        <span class="text-slate-700 font-medium truncate">{page.chip}</span>
+      </nav>
+
+      <!-- Mini-hero -->
+      <header class="mt-6 mb-2">
+        <span
+          class="chip text-white mb-3"
+          style="background: var(--unit)"
+        >
+          Bagian {page.bagian}
+        </span>
+        <h1 class="font-display font-bold text-[28px] sm:text-[32px] leading-tight text-ink mt-2">
+          {page.judul}
+        </h1>
+        <p class="text-slate-500 mt-2 text-[15px]">{page.desc}</p>
+        <p class="text-[13px] text-slate-400 mt-1">
+          Peraturan {unit.lengkap} · Tahun Ajaran 2026/2027
+        </p>
+      </header>
+
+      <div class="prose-rule pb-4">
+        <slot />
+      </div>
+
+      <PrevNext unit={unit} slug={slug} />
+      <DriveCta />
+    </div>
+  </article>
+</BaseLayout>

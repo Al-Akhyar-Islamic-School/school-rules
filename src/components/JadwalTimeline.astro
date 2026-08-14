@@ -1,0 +1,28 @@
+---
+// Timeline jadwal harian (pola ListRow: waktu sebagai eyebrow, accent bar warna unit).
+interface Props {
+  judul?: string;
+  items: { waktu: string; kegiatan: string; ket?: string }[];
+}
+const { judul, items } = Astro.props;
+---
+
+<div class="not-prose my-5">
+  {judul && <p class="font-bold text-ink text-[15px] mb-3">{judul}</p>}
+  <div class="grid gap-2">
+    {
+      items.map((it) => (
+        <div
+          class="rounded-[14px] border border-slate-200 bg-white px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-5"
+          style="border-left: 4px solid var(--unit);"
+        >
+          <p class="eyebrow-unit whitespace-nowrap sm:w-32 shrink-0">{it.waktu}</p>
+          <div class="min-w-0">
+            <p class="font-semibold text-ink text-[14.5px] leading-snug">{it.kegiatan}</p>
+            {it.ket && <p class="text-[13px] text-slate-500 mt-0.5">{it.ket}</p>}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

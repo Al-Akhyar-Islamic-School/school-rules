@@ -1,0 +1,130 @@
+---
+// Halaman landing satu unit: hero warna unit, fakta cepat, grid kartu bab.
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChipNav from './ChipNav.astro';
+import DriveCta from './DriveCta.astro';
+import Icon from './Icon.astro';
+import { getUnit, unitPages } from '../data/units';
+import type { UnitSlug } from '../data/units';
+
+interface Props {
+  unit: UnitSlug;
+}
+
+const logos = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/logo-*.png',
+  { eager: true }
+);
+
+const unit = getUnit(Astro.props.unit);
+const pages = unitPages(unit);
+const logo = logos[`../assets/${unit.logo}.png`]?.default;
+---
+
+<BaseLayout
+  title={`Peraturan ${unit.nama}`}
+  description={unit.deskripsi}
+  unit={unit.slug}
+>
+  <ChipNav unit={unit} />
+
+  <!-- Hero warna unit (pola AppHeader: sudut bawah membulat 24px) -->
+  <section
+    class="text-white relative overflow-hidden"
+    style={`background: linear-gradient(150deg, ${unit.warna} 0%, color-mix(in srgb, ${unit.warna} 78%, #00253b) 100%); border-radius: 0 0 24px 24px;`}
+  >
+    <div class="absolute inset-0 pattern-dots pointer-events-none" aria-hidden="true"></div>
+    <div class="container-ak py-10 sm:py-14 relative">
+      <div class="max-w-[820px]">
+        <div class="flex items-center gap-4 mb-5">
+          {
+            logo && (
+              <div class="bg-white rounded-[14px] p-2 shadow-md shrink-0">
+                <Image src={logo} alt={`Logo ${unit.lengkap}`} width={160} height={90} class="h-11 w-auto" loading="eager" />
+              </div>
+            )
+          }
+          <div>
+            <p class="text-white/75 text-[12px] font-bold uppercase tracking-[0.08em]">
+              Peraturan Sekolah · TA 2026/2027
+            </p>
+            <h1 class="font-display font-bold text-[26px] sm:text-[34px] leading-tight">
+              {unit.lengkap}
+            </h1>
+          </div>
+        </div>
+        <p class="text-white/85 text-[15px] sm:text-base max-w-[560px] leading-relaxed">
+          {unit.deskripsi}
+        </p>
+        <p class="text-white/60 text-[13px] mt-3">
+          Kepala Sekolah: {unit.kepala} · {unit.kelas}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fakta cepat -->
+  <section class="container-ak -mt-6 sm:-mt-8 relative z-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      {
+        unit.quickFacts.map((f) => (
+          <div class="card-ak p-4 sm:p-5">
+            <div
+              class="w-10 h-10 rounded-[10px] flex items-center justify-center mb-3"
+              style="background: var(--unit-100); color: var(--unit-600);"
+            >
+              <Icon name={f.icon} size={20} />
+            </div>
+            <p class="text-[11px] font-bold uppercase tracking-[0.06em] text-slate-500 mb-1">{f.label}</p>
+            <p class="text-[13.5px] sm:text-sm font-semibold text-ink leading-snug">{f.nilai}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Grid bab -->
+  <section class="container-ak mt-12 sm:mt-16">
+    <p class="eyebrow-unit">Daftar Aturan</p>
+    <h2 class="font-display font-bold text-[22px] sm:text-[26px] text-ink mt-1 mb-6">
+      Baca per Bab
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        pages.map((p, i) => (
+          <a
+            href={`/${unit.slug}/${p.slug}/`}
+            class="card-ak p-5 flex items-start gap-4 group"
+            data-reveal
+            style={`--reveal-delay: ${(i % 3) * 60}ms`}
+          >
+            <div
+              class="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center shrink-0"
+              style="background: var(--unit-100); color: var(--unit-600);"
+            >
+              <Icon name={p.icon} size={24} />
+            </div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-bold uppercase tracking-[0.06em] text-slate-400 mb-0.5">
+                Bagian {p.bagian}
+              </p>
+              <p class="font-semibold text-ink text-[15px] leading-snug group-hover:text-primary-600 transition-colors">
+                {p.judul}
+              </p>
+              <p class="text-[13px] text-slate-500 mt-1 leading-relaxed">{p.desc}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container-ak">
+    <DriveCta />
+    <p class="mt-6 text-sm text-slate-500">
+      Ketentuan umum (pengantar, dasar hukum, dan penutup) berlaku sama untuk semua unit —
+      baca di halaman <a href="/tentang/" class="font-semibold text-primary-600 hover:underline">Tentang Peraturan Ini</a>.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, units } from '../data/units';
+---
+
+<BaseLayout
+  title="Dokumen & Surat Pernyataan"
+  description="Unduh dokumen peraturan lengkap setiap unit dan pahami surat pernyataan siswa-orang tua Sekolah Islam Al Akhyar."
+>
+  <article class="container-ak">
+    <div class="max-w-[720px] mx-auto">
+      <header class="mt-10 mb-8">
+        <p class="eyebrow">Dokumen Resmi</p>
+        <h1 class="font-display font-bold text-[28px] sm:text-[32px] leading-tight text-ink mt-1">
+          Dokumen &amp; Surat Pernyataan
+        </h1>
+        <p class="text-slate-500 mt-2">
+          Situs ini menyajikan peraturan dalam format yang mudah dibaca. Versi resmi yang
+          ditandatangani tetap mengacu pada dokumen lengkap berikut.
+        </p>
+      </header>
+
+      <div class="card-ak p-6 sm:p-8 text-center">
+        <div class="w-14 h-14 rounded-[16px] bg-primary-50 text-primary-600 flex items-center justify-center mx-auto mb-4">
+          <Icon name="file-text" size={28} />
+        </div>
+        <p class="font-display font-bold text-ink text-xl mb-2">Dokumen Peraturan Lengkap</p>
+        <p class="text-sm text-slate-500 max-w-[440px] mx-auto mb-6">
+          Empat dokumen resmi Tahun Ajaran {site.tahunAjaran} — {units.map((u) => u.nama).join(', ')} —
+          tersedia di Google Drive resmi sekolah.
+        </p>
+        <a href={site.driveUrl} target="_blank" rel="noopener" class="btn btn-primary">
+          <Icon name="download" size={18} />
+          Buka Google Drive
+        </a>
+      </div>
+
+      <div class="prose-rule mt-10">
+        <h2>Surat Pernyataan Siswa dan Orang Tua (Lampiran 1)</h2>
+        <p>
+          Setiap dokumen peraturan dilengkapi <strong>Surat Pernyataan Siswa dan Orang
+          Tua/Wali</strong> yang dipisahkan dari dokumen, ditandatangani, lalu dikembalikan ke
+          sekolah setelah acara penerimaan SALAM AL AKHYAR. Dengan menandatanganinya,
+          siswa dan orang tua menyatakan:
+        </p>
+        <ul>
+          <li><strong>Peraturan sekolah</strong> — telah membaca, memahami, dan menyepakati seluruh isinya beserta perubahannya.</li>
+          <li><strong>Kewajiban akademik</strong> — memastikan kehadiran tepat waktu dan memahami konsekuensi batas alpha.</li>
+          <li><strong>Kewajiban keuangan</strong> — memahami jatuh tempo SPP dan dampak tunggakan pada hak akademik.</li>
+          <li><strong>Komunikasi dengan guru</strong> — mengikuti jam dan etika komunikasi yang ditetapkan.</li>
+          <li><strong>Perlindungan guru</strong> — berkomitmen bersikap hormat dan menempuh jalur resmi untuk setiap keluhan.</li>
+          <li><strong>Tahfidz dan Dinar App</strong> — mendukung murojaah di rumah dan mengaktifkan notifikasi Dinar App.</li>
+          <li><strong>Dokumentasi sekolah</strong> (unit SD) — persetujuan publikasi foto/video dengan hak menolak secara tertulis.</li>
+        </ul>
+        <p>
+          Formulir fisik dibagikan sekolah pada awal tahun ajaran; salinan digitalnya ada di
+          bagian akhir setiap dokumen peraturan di Google Drive.
+        </p>
+
+        <h2>Baca Versi Web per Unit</h2>
+        <ul>
+          {units.map((u) => <li><a href={`/${u.slug}/`}>Peraturan {u.lengkap}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

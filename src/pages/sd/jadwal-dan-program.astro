@@ -1,0 +1,56 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import JadwalTimeline from '../../components/JadwalTimeline.astro';
+
+const jadwal = [
+  { waktu: '07.00 – 07.30', kegiatan: 'Morning Time (Dhuha, Murojaah)', ket: 'Wajib seluruh siswa' },
+  { waktu: '07.30 – 09.50', kegiatan: 'Kegiatan pagi dan pembelajaran sesi 1', ket: 'Sesuai jadwal mapel' },
+  { waktu: '09.50 – 10.15', kegiatan: 'Istirahat 1' },
+  { waktu: '10.15 – 12.00', kegiatan: 'Pembelajaran sesi 2', ket: 'Sesuai jadwal mapel' },
+  { waktu: '12.00 – 13.00', kegiatan: 'Sholat Dzuhur berjamaah + makan siang' },
+  { waktu: '13.00 – 15.20', kegiatan: 'Pembelajaran sesi 3 / Ekstrakurikuler' },
+  { waktu: '15.20', kegiatan: 'Sholat Ashar + kepulangan', ket: 'Sesuai jadwal unit' },
+];
+---
+
+<RuleLayout unit="sd" slug="jadwal-dan-program">
+  <IntiAturan>
+    <li>Hari sekolah berlangsung pukul <strong>07.00–15.20</strong>, diakhiri Sholat Ashar sebelum pulang.</li>
+    <li>Drop-off hanya di depan gerbang utama; parkir penjemputan di area <strong>SMP–SMA</strong>.</li>
+    <li>Siswa SD tidak diperkenankan pulang sendiri tanpa izin tertulis orang tua yang terverifikasi.</li>
+    <li>Penjemput berpakaian sopan sesuai ketentuan; dilarang merokok di seluruh area sekolah.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 40" judul="Jadwal Kegiatan Harian SD" />
+  <JadwalTimeline items={jadwal} />
+
+  <PasalHeading pasal="Pasal 41" judul="Program Unggulan Khusus SD" />
+  <ul>
+    <li><strong>Pembiasaan Pagi</strong> (Morning Time Adab, Makan Bersama, Senam Bersama) — pembentukan karakter Islami, kemandirian, dan pola hidup sehat setiap pagi.</li>
+    <li><strong>Program Kurikulum Transisi</strong> — pendampingan masa peralihan dari TK menuju SD: penguatan literasi, numerasi, kemandirian, kemampuan sosial, pembiasaan adab, serta pengalaman belajar yang menyenangkan.</li>
+    <li><strong>Tahfidz Camp dan Tahfidz Day</strong> — program intensif untuk meningkatkan kualitas hafalan, murojaah, dan kecintaan terhadap Al-Qur'an.</li>
+    <li><strong>Proyek STEAM</strong> — pembelajaran berbasis proyek yang mengembangkan kreativitas, berpikir kritis, kolaborasi, dan pemecahan masalah.</li>
+    <li><strong>Penguatan Karakter Islami dan Kepemimpinan</strong> — pembinaan akhlak mulia, tanggung jawab, disiplin, dan jiwa kepemimpinan.</li>
+    <li><strong>Persembahan Akhir Sekolah</strong> — ajang apresiasi karya, bakat, dan capaian peserta didik di hadapan orang tua dan masyarakat sekolah.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 42" judul="Mentoring dan Bimbingan" />
+  <ol>
+    <li>Setiap siswa mendapatkan pendampingan dari wali kelas sebagai pendamping utama.</li>
+    <li>Wali kelas melakukan evaluasi karakter harian dan komunikasi rutin dengan orang tua.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 43" judul="Ketentuan Antar-Jemput Siswa" />
+  <ul>
+    <li>Siswa dipulangkan sesuai jadwal yang ditetapkan sekolah.</li>
+    <li>Kendaraan orang tua/wali hanya diperkenankan <strong>drop-off di depan gerbang utama</strong> — tidak parkir atau menunggu di depan sekolah, demi menghindari kemacetan.</li>
+    <li>Area parkir orang tua/wali tersedia di lingkungan <strong>SMP–SMA Islam Al Akhyar</strong>.</li>
+    <li>Saat penjemputan: parkir di area SMP–SMA, lalu laporkan nama dan kelas siswa kepada petugas. Petugas parkir berkoordinasi dengan petugas SD untuk menyiapkan siswa — tertib, aman, efisien.</li>
+    <li>Siswa SD <strong>tidak diperkenankan pulang sendiri</strong>, kecuali ada izin tertulis orang tua/wali yang telah diverifikasi sekolah.</li>
+    <li>Perubahan orang yang menjemput wajib diinformasikan ke wali kelas/pihak sekolah sebelum waktu penjemputan.</li>
+    <li>Penjemput wanita mengenakan hijab dan berpakaian sopan sesuai syariat; penjemput pria berpakaian sopan dan tidak bercelana pendek.</li>
+    <li>Seluruh orang tua/wali dan penjemput <strong>dilarang merokok</strong> di seluruh area dan lingkungan SD Islam Al Akhyar.</li>
+  </ul>
+</RuleLayout>

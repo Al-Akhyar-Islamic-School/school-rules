@@ -1,0 +1,48 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import PembinaanBertahap from '../../components/shared/PembinaanBertahap.astro';
+---
+
+<RuleLayout unit="sma" slug="apresiasi-dan-sanksi">
+  <IntiAturan>
+    <li>Prestasi diapresiasi lewat Beasiswa Tahfidz, Beasiswa Unggul, Student of the Month, hingga Al Akhyar Olympic.</li>
+    <li>Pembinaan pelanggaran berjalan <strong>bertahap</strong>: dari teguran lisan sampai sidang kesiswaan.</li>
+    <li>Skorsing diputuskan kepala sekolah; pengeluaran siswa adalah keputusan terakhir yayasan.</li>
+    <li>Prinsipnya: proporsional, edukatif, restoratif, suportif, dan rahasia.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 36" judul="Program Apresiasi Siswa" />
+  <table class="table-rule">
+    <caption class="sr-only">Program apresiasi siswa dan deskripsinya</caption>
+    <thead>
+      <tr><th>Program</th><th>Deskripsi</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Program"><strong>Beasiswa Tahfidz</strong></td>
+        <td data-label="Deskripsi">Potongan SPP bagi siswa yang mencapai/melampaui target hafalan Al-Qur'an. Syarat: Poin Akhlak Green Card.</td>
+      </tr>
+      <tr>
+        <td data-label="Program"><strong>Beasiswa Unggul</strong></td>
+        <td data-label="Deskripsi">Apresiasi atas prestasi akademik dan non-akademik tertinggi, dipertimbangkan berdasarkan Poin Unggul.</td>
+      </tr>
+      <tr>
+        <td data-label="Program"><strong>Penghargaan Akhirussanah</strong></td>
+        <td data-label="Deskripsi">Penghargaan tahunan untuk berbagai kategori prestasi dan keteladanan di akhir tahun ajaran.</td>
+      </tr>
+      <tr>
+        <td data-label="Program"><strong>Student of the Month</strong></td>
+        <td data-label="Deskripsi">Penghargaan bulanan untuk siswa teladan berdasarkan akhlak, prestasi, dan kontribusi.</td>
+      </tr>
+      <tr>
+        <td data-label="Program"><strong>Al Akhyar Olympic</strong></td>
+        <td data-label="Deskripsi">Ajang kompetisi akademik dan non-akademik internal tahunan yang merayakan keragaman bakat.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <PasalHeading pasal="Pasal 37 & 40" judul="Mekanisme dan Prinsip Pembinaan" />
+  <PembinaanBertahap intensifOleh="Bimbingan Konseling (BK)" />
+</RuleLayout>

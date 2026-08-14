@@ -1,0 +1,47 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import TahfidzTable from '../../components/shared/TahfidzTable.astro';
+import AdabSection from '../../components/shared/AdabSection.astro';
+import LaranganSyariat from '../../components/shared/LaranganSyariat.astro';
+---
+
+<RuleLayout unit="sma" slug="ibadah-dan-akhlak">
+  <IntiAturan>
+    <li>Sholat Dhuha, Zhuhur, dan Ashar <strong>berjamaah di sekolah</strong> wajib bagi seluruh siswa Muslim.</li>
+    <li>Jumat: siswa putra <strong>Sholat Jumat</strong> di masjid sekolah; siswa putri mengikuti <strong>kegiatan keputrian</strong>.</li>
+    <li>Target tahfidz SMA: <strong>4 Juz (kumulatif)</strong> dengan metode Sabaq–Sabqi–Manzil.</li>
+    <li>Salam, sopan santun, dan adab Islami wajib dijaga kepada semua warga sekolah.</li>
+    <li>Pelanggaran moral berat (pacaran, kekerasan, bullying, pornografi, narkoba) berakibat sidang kesiswaan.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 4" judul="Kewajiban Ibadah Harian" />
+  <ol>
+    <li>Seluruh siswa Muslim wajib mengikuti <strong>Sholat Dhuha berjamaah</strong> sesuai jadwal Morning Time.</li>
+    <li>Seluruh siswa Muslim wajib mengikuti <strong>Sholat Zhuhur/Ashar berjamaah</strong> di sekolah.</li>
+    <li>Pada hari Jumat, siswa putra diwajibkan mengikuti <strong>Sholat Jumat berjamaah</strong> di masjid sekolah dan siswa putri diwajibkan mengikuti <strong>kegiatan keputrian</strong> di sekolah.</li>
+    <li>Siswa yang tidak mengikuti sholat berjamaah tanpa alasan yang sah akan mendapat catatan Poinku.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 5" judul="Program Tahfidz Al-Qur'an" />
+  <p>
+    Seluruh siswa wajib mengikuti program Tahfidz Al-Qur'an yang terintegrasi dalam
+    jadwal harian. Target minimal hafalan per jenjang:
+  </p>
+  <TahfidzTable active="sma" />
+  <ul>
+    <li>Perkembangan hafalan dicatat dan dapat dipantau melalui fitur Monitoring Hafalan di Dinar App.</li>
+    <li>Siswa yang melampaui target hafalan mendapatkan apresiasi melalui <strong>Program Beasiswa Tahfidz</strong>.</li>
+  </ul>
+  <p class="text-[14px] text-slate-500">
+    Detail sistem Beasiswa Tahfidz tersedia di Panduan Kurikulum: <a href="https://kurikulum.alakhyar.sch.id" target="_blank" rel="noopener">kurikulum.alakhyar.sch.id</a>
+  </p>
+
+  <PasalHeading pasal="Pasal 6" judul="Adab dan Akhlak Islami" />
+  <p>Setiap siswa wajib:</p>
+  <AdabSection />
+
+  <PasalHeading pasal="Pasal 7" judul="Larangan Terkait Moral dan Syariat" />
+  <LaranganSyariat />
+</RuleLayout>

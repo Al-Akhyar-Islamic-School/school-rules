@@ -1,0 +1,40 @@
+---
+import type { Unit } from '../data/units';
+import { prevNext } from '../data/units';
+
+interface Props {
+  unit: Unit;
+  slug: string;
+}
+const { unit, slug } = Astro.props;
+const { prev, next } = prevNext(unit, slug);
+---
+
+<nav class="grid sm:grid-cols-2 gap-4 mt-14 no-print" aria-label="Navigasi bab">
+  {
+    prev ? (
+      <a href={`/${unit.slug}/${prev.slug}/`} class="card-ak p-5 group">
+        <p class="text-xs font-bold uppercase tracking-[0.06em] text-slate-500 mb-1.5">← Bab Sebelumnya</p>
+        <p class="font-semibold text-ink group-hover:text-primary-600 transition-colors">{prev.judul}</p>
+      </a>
+    ) : (
+      <a href={`/${unit.slug}/`} class="card-ak p-5 group">
+        <p class="text-xs font-bold uppercase tracking-[0.06em] text-slate-500 mb-1.5">← Kembali</p>
+        <p class="font-semibold text-ink group-hover:text-primary-600 transition-colors">Peraturan {unit.nama}</p>
+      </a>
+    )
+  }
+  {
+    next ? (
+      <a href={`/${unit.slug}/${next.slug}/`} class="card-ak p-5 sm:text-right group">
+        <p class="text-xs font-bold uppercase tracking-[0.06em] text-slate-500 mb-1.5">Bab Selanjutnya →</p>
+        <p class="font-semibold text-ink group-hover:text-primary-600 transition-colors">{next.judul}</p>
+      </a>
+    ) : (
+      <a href={`/${unit.slug}/`} class="card-ak p-5 sm:text-right group">
+        <p class="text-xs font-bold uppercase tracking-[0.06em] text-slate-500 mb-1.5">Selesai →</p>
+        <p class="font-semibold text-ink group-hover:text-primary-600 transition-colors">Kembali ke Peraturan {unit.nama}</p>
+      </a>
+    )
+  }
+</nav>

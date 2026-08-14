@@ -1,0 +1,46 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import TahfidzTable from '../../components/shared/TahfidzTable.astro';
+import AdabSection from '../../components/shared/AdabSection.astro';
+import LaranganSyariat from '../../components/shared/LaranganSyariat.astro';
+---
+
+<RuleLayout unit="tk" slug="ibadah-dan-akhlak">
+  <IntiAturan>
+    <li>Ananda membawa alat sholat dari rumah dan mengikuti <strong>Sholat Dhuha berjamaah</strong> sesuai jadwal Morning Time.</li>
+    <li>Target tahfidz TK: <strong>10 surah (An-Nas s.d. Al-Fil) + Ayat Kursi</strong>; KB: Al-Fatihah — melalui pembiasaan simaan.</li>
+    <li>Salam, sopan santun, dan adab Islami dibiasakan kepada semua warga sekolah.</li>
+    <li>Kekerasan, bullying, dan perbuatan yang bertentangan dengan aqidah termasuk <strong>pelanggaran berat</strong>.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 4" judul="Kewajiban Ibadah Harian" />
+  <ol>
+    <li>Seluruh siswa wajib membawa alat sholat dari rumah: siswa laki-laki membawa <strong>sajadah/peci</strong>, siswa perempuan membawa <strong>mukena dan sajadah</strong>.</li>
+    <li>Seluruh siswa wajib mengikuti <strong>Sholat Dhuha berjamaah</strong> sesuai jadwal Morning Time.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 5" judul="Program Tahfidz Al-Qur'an" />
+  <p>
+    Seluruh siswa wajib mengikuti program Tahfidz Al-Qur'an yang terintegrasi dalam
+    jadwal harian. Di jenjang KB-TK, hafalan dibangun melalui <strong>metode simaan</strong> —
+    pembiasaan auditif dan peniruan <em>(imitative repetition)</em>. Target minimal hafalan per jenjang:
+  </p>
+  <TahfidzTable active="tk" />
+  <ul>
+    <li>Untuk jenjang <strong>KB</strong>, target minimal hafalan adalah <strong>Al-Fatihah</strong> dengan metode simaan yang sama.</li>
+    <li>Perkembangan hafalan dicatat dan dapat dipantau melalui fitur Monitoring Hafalan di Dinar App (berlaku jenjang SD–SMA).</li>
+    <li>Siswa yang melampaui target hafalan mendapatkan apresiasi melalui <strong>Program Beasiswa Tahfidz</strong> (berlaku jenjang SD–SMA).</li>
+  </ul>
+  <p class="text-[14px] text-slate-500">
+    Detail sistem Beasiswa Tahfidz tersedia di Panduan Kurikulum: <a href="https://booklet.alakhyar.sch.id/kurikulum" target="_blank" rel="noopener">booklet.alakhyar.sch.id/kurikulum</a>
+  </p>
+
+  <PasalHeading pasal="Pasal 6" judul="Adab dan Akhlak Islami" />
+  <p>Setiap siswa wajib:</p>
+  <AdabSection />
+
+  <PasalHeading pasal="Pasal 7" judul="Larangan Terkait Moral dan Syariat" />
+  <LaranganSyariat variant="tk" />
+</RuleLayout>

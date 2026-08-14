@@ -1,0 +1,79 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+---
+
+<RuleLayout unit="tk" slug="absensi-dan-izin">
+  <IntiAturan>
+    <li>Kehadiran ananda dicatat oleh <strong>guru</strong> melalui aplikasi Al Akhyar Dinar TK — bukan check-in mandiri siswa.</li>
+    <li>Izin tidak hadir disampaikan orang tua <strong>paling lambat pukul 10.00 WITA</strong> di hari yang sama.</li>
+    <li>Tanpa keterangan <strong>3 hari berturut-turut</strong>: wali kelas menghubungi orang tua untuk konfirmasi.</li>
+    <li>Tanpa keterangan <strong>5 hari atau lebih dalam sebulan</strong>: sekolah memanggil orang tua untuk klarifikasi.</li>
+    <li>Tanpa informasi dari orang tua, ketidakhadiran otomatis dicatat sebagai <strong>alpha</strong>.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 12" judul="Mekanisme Absensi Harian via Dinar App" />
+  <p>
+    Al Akhyar menerapkan sistem absensi digital berbasis Dinar App sebagai
+    <strong>satu-satunya metode pencatatan kehadiran yang sah</strong>.
+  </p>
+  <ol>
+    <li>Guru melakukan absensi melalui aplikasi digital TK Al Akhyar saat kegiatan belajar dimulai.</li>
+    <li>Ketidakhadiran siswa tanpa keterangan dicatat sebagai <strong>alpha</strong> oleh guru kelas atau mitra pendamping melalui aplikasi Al Akhyar Dinar TK.</li>
+    <li>Ketidakhadiran karena sakit dicatat sebagai <strong>izin sakit</strong> berdasarkan pemberitahuan dari orang tua/wali.</li>
+  </ol>
+  <p class="text-[14px] text-slate-500">
+    Pantau dan kelola kehadiran anak melalui fitur E-Absent di <a href="https://tk.dinar.alakhyar.sch.id" target="_blank" rel="noopener">tk.dinar.alakhyar.sch.id</a>.
+  </p>
+
+  <PasalHeading pasal="Pasal 13" judul="Kategori Status Kehadiran" />
+  <table class="table-rule">
+    <caption class="sr-only">Definisi dan mekanisme pelaporan setiap status kehadiran</caption>
+    <thead>
+      <tr><th>Status</th><th>Definisi</th><th>Mekanisme Pelaporan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Status"><strong>Hadir</strong></td>
+        <td data-label="Definisi">Siswa hadir</td>
+        <td data-label="Pelaporan">Absensi kehadiran dilakukan oleh guru melalui TK Dinar App</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Izin</strong></td>
+        <td data-label="Definisi">Tidak hadir dengan alasan yang disetujui (keperluan keluarga, acara resmi, dll.)</td>
+        <td data-label="Pelaporan">Orang tua mengajukan izin ke guru wali kelas/mitra pendamping</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Sakit</strong></td>
+        <td data-label="Definisi">Tidak hadir karena sakit dengan bukti (surat dokter/keterangan orang tua)</td>
+        <td data-label="Pelaporan">Orang tua mengajukan izin sakit ke guru wali kelas/mitra pendamping</td>
+      </tr>
+      <tr>
+        <td data-label="Status"><strong>Alpha</strong></td>
+        <td data-label="Definisi">Tidak hadir tanpa keterangan yang sah</td>
+        <td data-label="Pelaporan">Guru kelas/mitra pendamping mencatat melalui aplikasi Al Akhyar Dinar TK</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <PasalHeading pasal="Pasal 13" judul="Batas Ketidakhadiran dan Konsekuensi" />
+  <ol>
+    <li>Ketidakhadiran siswa dicatat setiap hari oleh wali kelas atau mitra pendamping melalui aplikasi Al Akhyar Dinar TK.</li>
+    <li>Jika siswa tidak hadir <strong>3 hari berturut-turut tanpa keterangan</strong>, wali kelas/mitra pendamping akan menghubungi orang tua/wali untuk konfirmasi.</li>
+    <li>Jika ketidakhadiran mencapai <strong>5 hari atau lebih dalam satu bulan</strong> tanpa keterangan yang jelas, sekolah melakukan pemanggilan orang tua/wali untuk klarifikasi.</li>
+    <li>Sekolah tetap mengedepankan pendekatan komunikasi dan pembinaan kepada orang tua/wali dalam menangani ketidakhadiran siswa.</li>
+    <li>Siswa yang tidak hadir tanpa keterangan kehilangan kesempatan mengikuti kegiatan pembelajaran pada hari tersebut.</li>
+    <li>Ketidakhadiran yang berulang dapat memengaruhi pemantauan perkembangan belajar anak pada laporan penilaian.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 14" judul="Prosedur Izin dan Surat Keterangan" />
+  <ol>
+    <li>Orang tua/wali wajib memberikan informasi apabila siswa tidak dapat hadir ke sekolah.</li>
+    <li>Izin tidak hadir dapat disampaikan melalui pesan resmi dari orang tua.</li>
+    <li>Informasi izin sebaiknya disampaikan sebelum atau pada hari yang sama <strong>paling lambat pukul 10.00 WITA</strong>.</li>
+    <li>Jika siswa sakit, orang tua/wali dapat menyertakan keterangan sakit dari orang tua atau surat keterangan dokter (jika ada).</li>
+    <li>Wali kelas atau mitra pendamping mencatat ketidakhadiran sesuai keterangan yang diterima: izin sakit, izin keluarga, atau alpha.</li>
+    <li>Jika tidak ada informasi dari orang tua/wali, ketidakhadiran dicatat sebagai <strong>alpha</strong> (tanpa keterangan).</li>
+  </ol>
+</RuleLayout>

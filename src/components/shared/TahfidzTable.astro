@@ -1,0 +1,38 @@
+---
+// Tabel target tahfidz lintas jenjang — sama di semua dokumen unit.
+// Baris unit aktif diberi sorotan warna unit.
+import type { UnitSlug } from '../../data/units';
+
+interface Props {
+  active: UnitSlug;
+}
+const { active } = Astro.props;
+
+const rows = [
+  { slug: 'tk', jenjang: 'TK', target: '10 Surah (An-Nas s.d. Al-Fil) + Ayat Kursi', metode: 'Metode Simaan' },
+  { slug: 'sd', jenjang: 'SD', target: '2 Juz Al-Qur’an', metode: 'Sabaq–Sabqi–Manzil' },
+  { slug: 'smp', jenjang: 'SMP', target: '3 Juz (kumulatif)', metode: 'Sabaq–Sabqi–Manzil' },
+  { slug: 'sma', jenjang: 'SMA', target: '4 Juz (kumulatif)', metode: 'Sabaq–Sabqi–Manzil' },
+];
+---
+
+<table class="table-rule">
+  <caption class="sr-only">Target minimal hafalan Al-Qur'an per jenjang</caption>
+  <thead>
+    <tr><th>Jenjang</th><th>Target Minimal</th><th>Metode</th></tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((r) => (
+        <tr style={r.slug === active ? 'background: var(--unit-soft); font-weight: 600;' : undefined}>
+          <td data-label="Jenjang">
+            {r.jenjang}
+            {r.slug === active && <span class="chip text-white ml-2" style="background: var(--unit); font-size: 10px;">Unit Ini</span>}
+          </td>
+          <td data-label="Target Minimal">{r.target}</td>
+          <td data-label="Metode">{r.metode}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

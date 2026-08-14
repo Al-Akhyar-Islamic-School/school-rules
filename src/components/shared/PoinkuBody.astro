@@ -1,0 +1,184 @@
+---
+// Isi halaman Sistem Poinku (BAGIAN V) — berlaku SD/SMP/SMA.
+// Mekanik inti identik antar unit; daftar pelanggaran tambahan dan
+// tabel Poin Unggul berbeda per unit (lewat props).
+import PasalHeading from '../PasalHeading.astro';
+
+interface Props {
+  ringanExtra?: string[];
+  sedangExtra?: string[];
+  poinUnggul: { capaian: string; poin: string }[];
+}
+const { ringanExtra = [], sedangExtra = [], poinUnggul } = Astro.props;
+
+const STATUS = [
+  {
+    nama: 'Aman', rentang: '> 80', kartu: 'Green Card',
+    bg: 'var(--color-green-100)', ink: 'var(--color-green-600)', dot: 'var(--color-green-500)',
+    ket: 'Disiplin positif; dorongan untuk terus meningkatkan akhlak.',
+  },
+  {
+    nama: 'Peringatan', rentang: '51–80', kartu: 'Yellow Card',
+    bg: 'var(--color-amber-100)', ink: 'var(--color-amber-600)', dot: 'var(--color-amber-500)',
+    ket: 'Konseling wali kelas; komunikasi ke orang tua; target perbaikan.',
+  },
+  {
+    nama: 'Pembinaan', rentang: '21–50', kartu: 'Orange Card',
+    bg: 'var(--color-coral-100)', ink: 'var(--color-coral-600)', dot: '#f5822c',
+    ket: 'Pembinaan intensif BK; surat pernyataan; pemantauan harian.',
+  },
+  {
+    nama: 'Kritis', rentang: '1–20', kartu: 'Red Card',
+    bg: 'var(--color-coral-100)', ink: 'var(--color-coral-600)', dot: 'var(--color-coral-500)',
+    ket: 'Pembinaan tim kesiswaan + kepala sekolah; keterlibatan penuh orang tua.',
+  },
+  {
+    nama: 'Sanksi Berat', rentang: '0', kartu: 'Black Card',
+    bg: 'var(--color-slate-100)', ink: 'var(--color-ink)', dot: 'var(--color-ink)',
+    ket: 'Sidang kesiswaan; skorsing atau rekomendasi khusus yayasan.',
+  },
+];
+
+const RINGAN = [
+  'Terlambat masuk sekolah/kelas tanpa keterangan',
+  'Tidak mengenakan seragam lengkap',
+  'Tidak membawa perlengkapan belajar',
+  'Tidak mengerjakan tugas/PR',
+  'Ribut atau mengganggu ketertiban kelas',
+  'Membuang sampah sembarangan',
+  'Tidak mengucapkan salam',
+  ...ringanExtra,
+];
+const SEDANG = [
+  'Bolos pelajaran/kegiatan sekolah tanpa izin',
+  'Menggunakan ponsel selama pelajaran tanpa izin',
+  'Berbicara tidak sopan kepada guru atau staf',
+  'Tidak mengikuti sholat berjamaah tanpa alasan sah',
+  'Merusak fasilitas sekolah',
+  'Tidak jujur / berbohong kepada guru',
+  'Berkelahi (tingkat pertama)',
+  ...sedangExtra,
+];
+const BERAT = [
+  'Bullying fisik, verbal, atau siber',
+  'Membawa atau mengonsumsi rokok/vape/narkoba',
+  'Mencuri atau memalak',
+  'Berbuat asusila atau melakukan pelecehan',
+  'Memalsukan tanda tangan atau dokumen sekolah',
+  'Terlibat tawuran atau kekerasan serius',
+  'Membawa/menyebarkan konten pornografi',
+];
+---
+
+<PasalHeading pasal="Pasal 12" judul="Apa Itu Poinku?" />
+<p>
+  Al Akhyar menerapkan <strong>Poinku — Al Akhyar Student Conduct System</strong> sebagai
+  instrumen pembinaan karakter yang terukur dan akuntabel. Setiap siswa memiliki dua jenis poin:
+</p>
+<div class="grid sm:grid-cols-2 gap-4 not-prose my-5">
+  <div class="card-ak p-5">
+    <p class="eyebrow-unit mb-1">Poin Akhlak</p>
+    <p class="font-display font-bold text-[30px] text-ink leading-none mb-2">100</p>
+    <p class="text-[13.5px] text-slate-500 leading-relaxed">
+      Nilai awal setiap siswa. Berkurang saat terjadi pelanggaran dan dapat <strong class="text-ink">dipulihkan</strong> melalui konsekuensi edukatif.
+      Mencerminkan kedisiplinan dan kepatuhan pada tata tertib.
+    </p>
+  </div>
+  <div class="card-ak p-5">
+    <p class="eyebrow-unit mb-1">Poin Unggul</p>
+    <p class="font-display font-bold text-[30px] text-ink leading-none mb-2">0</p>
+    <p class="text-[13.5px] text-slate-500 leading-relaxed">
+      Dimulai dari nol dan <strong class="text-ink">bertambah</strong> berdasarkan capaian
+      dan prestasi. Mencerminkan prestasi akademik dan non-akademik siswa.
+    </p>
+  </div>
+</div>
+<ul>
+  <li>Setiap pelanggaran dan prestasi dicatat melalui sistem Poinku yang terintegrasi dengan Dinar App.</li>
+  <li>Orang tua menerima notifikasi perubahan poin secara <em>real-time</em> melalui Dinar App.</li>
+  <li>Poin Akhlak dapat dipulihkan setelah siswa menyelesaikan konsekuensi edukatif yang ditetapkan.</li>
+</ul>
+
+<PasalHeading pasal="Pasal 13" judul="Lima Status Poin Akhlak" />
+<p>
+  Sisa Poin Akhlak menentukan status kartu siswa beserta konsekuensi dan bentuk pembinaannya:
+</p>
+<div class="not-prose grid gap-3 my-5">
+  {
+    STATUS.map((s) => (
+      <div class="rounded-[14px] border border-slate-200 bg-white shadow-xs p-4 sm:p-5 flex items-start gap-4">
+        <div
+          class="w-12 h-12 rounded-full shrink-0 flex items-center justify-center"
+          style={`background: ${s.bg}; color: ${s.ink};`}
+        >
+          <span class="w-4 h-4 rounded-full" style={`background: ${s.dot}`} />
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <p class="font-bold text-ink">{s.nama}</p>
+            <span class="chip" style={`background: ${s.bg}; color: ${s.ink};`}>{s.kartu}</span>
+            <span class="text-[13px] font-bold text-slate-500 ml-auto whitespace-nowrap">Poin {s.rentang}</span>
+          </div>
+          <p class="text-[13.5px] text-slate-500 mt-1 leading-relaxed">{s.ket}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<PasalHeading pasal="Pasal 14" judul="Kategori Pelanggaran dan Bobot Poin" />
+<div class="not-prose grid gap-4 my-5">
+  <div class="rounded-[14px] border border-slate-200 bg-white overflow-hidden">
+    <div class="px-5 py-3" style="background: var(--color-amber-100);">
+      <p class="font-bold text-[15px]" style="color: var(--color-amber-600);">
+        Pelanggaran Ringan <span class="font-semibold opacity-80">· Poin Akhlak −1 s.d. −5</span>
+      </p>
+    </div>
+    <ul class="p-5 space-y-2 text-[14.5px] leading-relaxed list-disc pl-9">
+      {RINGAN.map((x) => <li>{x}</li>)}
+    </ul>
+  </div>
+  <div class="rounded-[14px] border border-slate-200 bg-white overflow-hidden">
+    <div class="px-5 py-3" style="background: var(--color-coral-100);">
+      <p class="font-bold text-[15px]" style="color: #b8541e;">
+        Pelanggaran Sedang <span class="font-semibold opacity-80">· Poin Akhlak −6 s.d. −20</span>
+      </p>
+    </div>
+    <ul class="p-5 space-y-2 text-[14.5px] leading-relaxed list-disc pl-9">
+      {SEDANG.map((x) => <li>{x}</li>)}
+    </ul>
+  </div>
+  <div class="rounded-[14px] border border-slate-200 bg-white overflow-hidden">
+    <div class="px-5 py-3" style="background: var(--color-coral-100);">
+      <p class="font-bold text-[15px]" style="color: var(--color-coral-600);">
+        Pelanggaran Berat <span class="font-semibold opacity-80">· Poin Akhlak −21 s.d. −50 / langsung sidang</span>
+      </p>
+    </div>
+    <ul class="p-5 space-y-2 text-[14.5px] leading-relaxed list-disc pl-9">
+      {BERAT.map((x) => <li>{x}</li>)}
+    </ul>
+  </div>
+</div>
+
+<PasalHeading pasal="Pasal 15" judul="Prestasi dan Poin Unggul" />
+<p>Poin Unggul diberikan atas capaian dan prestasi positif siswa, antara lain:</p>
+<table class="table-rule">
+  <caption class="sr-only">Daftar capaian dan Poin Unggul yang diberikan</caption>
+  <thead>
+    <tr><th>Jenis Prestasi / Capaian</th><th>Poin Unggul</th></tr>
+  </thead>
+  <tbody>
+    {
+      poinUnggul.map((r) => (
+        <tr>
+          <td data-label="Capaian">{r.capaian}</td>
+          <td data-label="Poin Unggul"><strong style="color: var(--color-green-600)">{r.poin}</strong></td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+<p class="text-[14px] text-slate-500">
+  Rekap Poinku menjadi bagian dari laporan perkembangan peserta didik di E-Rapor.
+  Panduan lengkap: <a href="https://booklet.alakhyar.sch.id/poinku" target="_blank" rel="noopener">booklet.alakhyar.sch.id/poinku</a>
+</p>

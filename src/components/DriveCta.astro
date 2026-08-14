@@ -1,0 +1,36 @@
+---
+import { site } from '../data/units';
+import Icon from './Icon.astro';
+
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+
+{
+  compact ? (
+    <a
+      href={site.driveUrl}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 no-print"
+    >
+      <Icon name="file-text" size={16} />
+      Baca dokumen peraturan lengkap (Google Drive) ↗
+    </a>
+  ) : (
+    <div class="card-ak p-6 sm:p-7 mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 no-print">
+      <div class="flex-1">
+        <p class="font-display font-bold text-ink text-lg mb-1">Ingin membaca dokumen aslinya?</p>
+        <p class="text-sm text-slate-500">
+          Dokumen peraturan lengkap setiap unit (versi resmi yang ditandatangani) tersedia di Google Drive sekolah.
+        </p>
+      </div>
+      <a href={site.driveUrl} target="_blank" rel="noopener" class="btn btn-primary shrink-0">
+        <Icon name="download" size={18} />
+        Buka Dokumen Lengkap
+      </a>
+    </div>
+  )
+}

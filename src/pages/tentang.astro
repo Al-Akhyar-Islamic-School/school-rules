@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DriveCta from '../components/DriveCta.astro';
+import { site, units } from '../data/units';
+---
+
+<BaseLayout
+  title="Tentang Peraturan Ini"
+  description="Pengantar, visi, dasar hukum, dan ketentuan pemberlakuan Peraturan Sekolah Islam Al Akhyar Tahun Ajaran 2026/2027."
+>
+  <article class="container-ak">
+    <div class="max-w-[720px] mx-auto">
+      <header class="mt-10 mb-8">
+        <p class="eyebrow">Ketentuan Umum Semua Unit</p>
+        <h1 class="font-display font-bold text-[28px] sm:text-[32px] leading-tight text-ink mt-1">
+          Tentang Peraturan Ini
+        </h1>
+        <p class="text-slate-500 mt-2">
+          Bagian pengantar dan penutup berikut berlaku sama untuk peraturan seluruh unit —
+          TK/KB, SD, SMP, dan SMA Islam Al Akhyar, Tahun Ajaran {site.tahunAjaran}.
+        </p>
+      </header>
+
+      <div class="prose-rule pb-4">
+        <h2>Kata Pengantar</h2>
+        <p><em>Assalamu'alaikum warahmatullahi wabarakatuh.</em></p>
+        <p>
+          Dengan mengucap syukur kehadirat Allah SWT, kami menyampaikan Peraturan Sekolah
+          Islam Al Akhyar Tahun Ajaran {site.tahunAjaran}. Peraturan ini disusun sebagai
+          panduan bersama dalam menciptakan lingkungan belajar yang tertib, aman, Islami,
+          dan kondusif bagi seluruh warga sekolah.
+        </p>
+        <p>
+          Peraturan ini bukan sekadar daftar larangan, melainkan cerminan nilai-nilai Islam
+          yang kami jaga bersama: kedisiplinan, kejujuran, tanggung jawab, saling
+          menghormati, dan semangat belajar yang tak pernah padam. Kami berharap setiap
+          siswa, orang tua, dan guru menjadikan peraturan ini sebagai bagian dari budaya
+          hidup di Al Akhyar.
+        </p>
+
+        <h2>Visi</h2>
+        <p>
+          Menjadi lembaga pendidikan Islam terdepan yang melahirkan generasi
+          <strong>Unggul &amp; Berakhlak</strong>, siap menjadi pemimpin dan kontributor peradaban.
+        </p>
+
+        <h2>Dasar Hukum dan Referensi</h2>
+        <p>Peraturan Sekolah ini disusun mengacu pada:</p>
+        <ul>
+          <li>Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional.</li>
+          <li>Peraturan Pemerintah dan Permendikbud yang berlaku terkait tata tertib sekolah.</li>
+          <li>Panduan Kurikulum Unggul &amp; Berakhlak Al Akhyar — <a href="https://booklet.alakhyar.sch.id/kurikulum" target="_blank" rel="noopener">booklet.alakhyar.sch.id/kurikulum</a>.</li>
+          <li>POINKU — Al Akhyar Student Conduct System — <a href="https://booklet.alakhyar.sch.id/poinku" target="_blank" rel="noopener">booklet.alakhyar.sch.id/poinku</a>.</li>
+          <li>Kebijakan internal Yayasan Pendidikan Islam Al Akhyar yang berlaku.</li>
+        </ul>
+
+        <h2>Keadaan Darurat dan Force Majeure</h2>
+        <ul>
+          <li>Dalam kondisi darurat (bencana alam, pandemi, dll.), sekolah berhak mengubah jadwal dan tata tertib sementara.</li>
+          <li>Informasi darurat dan perubahan kebijakan disampaikan melalui kanal resmi Dinar App.</li>
+          <li>Orang tua wajib memastikan informasi kontak (nomor HP, email) di Dinar App selalu aktif dan terkini.</li>
+        </ul>
+
+        <h2>Perubahan dan Pembaruan Peraturan</h2>
+        <ol>
+          <li>Peraturan sekolah dapat direvisi setiap tahun ajaran atau sewaktu-waktu sesuai kebutuhan.</li>
+          <li>Perubahan disampaikan kepada siswa dan orang tua melalui Dinar App dengan pemberitahuan resmi.</li>
+          <li>Siswa dan orang tua yang belum menerima informasi perubahan tetap terikat pada peraturan yang berlaku.</li>
+        </ol>
+
+        <h2>Penutup</h2>
+        <p>
+          Peraturan sekolah ini disusun dengan penuh kasih sayang dan tanggung jawab demi
+          kebaikan bersama. Semoga Allah SWT senantiasa memberkahi seluruh proses pendidikan
+          di Al Akhyar Islamic School. <em>Aamiin ya Rabbal 'alamin.</em>
+        </p>
+
+        <h2>Penetapan</h2>
+        <p>
+          Setiap dokumen peraturan unit ditetapkan di Makassar oleh kepala sekolah unit
+          bersama Yayasan Pendidikan Islam Al Akhyar:
+        </p>
+        <ul>
+          {units.map((u) => <li><strong>{u.lengkap}</strong> — {u.kepala}</li>)}
+        </ul>
+      </div>
+
+      <DriveCta />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, units } from '../data/units';
+
+const kanal = [
+  { icon: 'phone', label: 'WhatsApp Humas', nilai: site.phone, href: site.whatsapp },
+  { icon: 'mail', label: 'Email Resmi', nilai: site.email, href: `mailto:${site.email}` },
+  { icon: 'map-pin', label: 'Alamat', nilai: site.address, href: 'https://maps.google.com/?q=Sekolah+Islam+Al+Akhyar+Makassar' },
+  { icon: 'message-circle', label: 'Instagram', nilai: site.instagramHandle, href: site.instagram },
+];
+---
+
+<BaseLayout
+  title="Kontak & Pengaduan"
+  description="Kanal komunikasi resmi Sekolah Islam Al Akhyar: WhatsApp humas, email, jam komunikasi guru, dan alur pengaduan berjenjang."
+>
+  <article class="container-ak">
+    <div class="max-w-[720px] mx-auto">
+      <header class="mt-10 mb-8">
+        <p class="eyebrow">Kanal Resmi</p>
+        <h1 class="font-display font-bold text-[28px] sm:text-[32px] leading-tight text-ink mt-1">
+          Kontak &amp; Pengaduan
+        </h1>
+        <p class="text-slate-500 mt-2">
+          Gunakan kanal resmi berikut agar setiap pesan tercatat dan tertangani dengan baik.
+        </p>
+      </header>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        {
+          kanal.map((k) => (
+            <a href={k.href} target="_blank" rel="noopener" class="card-ak p-5 flex items-start gap-4 group">
+              <div class="w-11 h-11 rounded-[12px] bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+                <Icon name={k.icon} size={22} />
+              </div>
+              <div class="min-w-0">
+                <p class="text-[11px] font-bold uppercase tracking-[0.06em] text-slate-500">{k.label}</p>
+                <p class="font-semibold text-ink text-[14.5px] mt-0.5 leading-snug group-hover:text-primary-600 transition-colors">{k.nilai}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="prose-rule mt-10">
+        <h2>Jam Komunikasi kepada Guru</h2>
+        <p>
+          Komunikasi orang tua kepada guru dilayani <strong>Senin–Jumat 06.00–17.00 WITA</strong>
+          dan <strong>Sabtu 06.00–12.00 WITA</strong> (hanya keperluan mendesak). Pada hari
+          Minggu dan libur nasional guru tidak berkewajiban merespons. Ketentuan lengkap ada
+          di halaman Kemitraan Orang Tua pada peraturan tiap unit.
+        </p>
+
+        <h2>Alur Pengaduan Berjenjang</h2>
+        <p>Sampaikan keluhan secara tertulis melalui Dinar App atau surat resmi, berurutan:</p>
+        <table class="table-rule">
+          <caption class="sr-only">Alur pengaduan dan waktu respons maksimal</caption>
+          <thead>
+            <tr><th>Tahap</th><th>Kepada</th><th>Respons Maks.</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Tahap"><strong>1</strong></td><td data-label="Kepada">Wali Kelas</td><td data-label="Respons">2 hari kerja</td></tr>
+            <tr><td data-label="Tahap"><strong>2</strong></td><td data-label="Kepada">Wakil Kepala Sekolah Bidang Kesiswaan</td><td data-label="Respons">3 hari kerja</td></tr>
+            <tr><td data-label="Tahap"><strong>3</strong></td><td data-label="Kepada">Kepala Sekolah</td><td data-label="Respons">5 hari kerja</td></tr>
+            <tr><td data-label="Tahap"><strong>4</strong></td><td data-label="Kepada">Pimpinan Yayasan Pendidikan Islam Al Akhyar</td><td data-label="Respons">7 hari kerja</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Kepala Sekolah per Unit</h2>
+        <ul>
+          {units.map((u) => <li><strong>{u.lengkap}</strong> — {u.kepala}</li>)}
+        </ul>
+        <p class="text-[14px] text-slate-500">
+          Kontak lengkap per unit (wakasek, BK, administrasi, nomor piket) tersedia pada
+          Lampiran 2 dokumen peraturan tiap unit dan di kanal informasi Dinar App.
+        </p>
+
+        <h2>Tautan Resmi</h2>
+        <ul>
+          <li>Dinar App — <a href={site.dinarUrl} target="_blank" rel="noopener">dinar.alakhyar.sch.id</a></li>
+          <li>Situs resmi — <a href={site.webUrl} target="_blank" rel="noopener">alakhyar.sch.id</a></li>
+          <li>Kurikulum — <a href={site.kurikulumUrl} target="_blank" rel="noopener">kurikulum.alakhyar.sch.id</a></li>
+          <li>Dokumen peraturan lengkap — <a href={site.driveUrl} target="_blank" rel="noopener">Google Drive resmi</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

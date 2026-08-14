@@ -1,0 +1,99 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import JadwalTimeline from '../../components/JadwalTimeline.astro';
+
+const jadwalTk = [
+  { waktu: '07.30 – 07.45', kegiatan: 'Kedatangan siswa' },
+  { waktu: '07.30 – 08.10', kegiatan: 'Morning Time (qiroah, literasi pagi, numerasi pagi)', ket: 'Wajib seluruh siswa' },
+  { waktu: '08.10 – 08.30', kegiatan: 'Apel pagi', ket: 'Wajib seluruh siswa' },
+  { waktu: '08.30 – 09.00', kegiatan: 'Istirahat / makan bersama', ket: 'Wajib seluruh siswa' },
+  { waktu: '09.00 – 09.20', kegiatan: 'Bermain bersama di halaman outdoor', ket: 'Wajib seluruh siswa' },
+  { waktu: '09.20 – 10.40', kegiatan: 'Pembelajaran sentra', ket: 'Wajib seluruh siswa' },
+  { waktu: '10.40 – 11.00', kegiatan: 'Jurnal siang', ket: 'Wajib seluruh siswa' },
+  { waktu: '11.00', kegiatan: 'Kepulangan', ket: 'Khusus TK A dan TK B' },
+];
+
+const jadwalKb = [
+  { waktu: '07.30 – 07.45', kegiatan: 'Penyambutan, pembiasaan pagi, dan toilet train pagi', ket: 'Wajib seluruh siswa' },
+  { waktu: '07.45 – 08.10', kegiatan: 'Bermain bebas di area brakiasi', ket: 'Wajib seluruh siswa' },
+  { waktu: '08.10 – 08.45', kegiatan: 'Morning Time', ket: 'Wajib seluruh siswa' },
+  { waktu: '08.45 – 09.00', kegiatan: 'Toilet train dan minum', ket: 'Wajib seluruh siswa' },
+  { waktu: '09.00 – 09.15', kegiatan: 'Makan bersama', ket: 'Wajib seluruh siswa' },
+  { waktu: '09.15 – 09.30', kegiatan: 'Kegiatan kelompok kecil', ket: 'Wajib seluruh siswa' },
+  { waktu: '09.30 – 10.10', kegiatan: 'Zona bermain terarah', ket: 'Wajib seluruh siswa' },
+  { waktu: '10.10 – 10.30', kegiatan: 'Recalling dan toilet train sebelum pulang', ket: 'Wajib seluruh siswa' },
+  { waktu: '10.30', kegiatan: 'Kepulangan', ket: 'Khusus siswa KB' },
+];
+---
+
+<RuleLayout unit="tk" slug="jadwal-dan-program">
+  <IntiAturan>
+    <li>Kegiatan TK berlangsung pukul <strong>07.30–11.00</strong>; KB pukul <strong>07.30–10.30</strong>.</li>
+    <li>Penjemput wajib membawa <strong>kartu tanda penjemput</strong> dan menunggu di area penjemputan.</li>
+    <li>Ananda KB-TK <strong>dilarang pulang sendiri</strong>, kecuali ada izin tertulis orang tua terdaftar.</li>
+    <li>Libur cuti bersama hanya otomatis untuk <strong>hari keagamaan Islam</strong>; selebihnya mengikuti kalender akademik Al Akhyar.</li>
+    <li>Program khas: Kelas Inspirasi, Mini Proyek, Outing Class, Family Gathering, dan Puncak Karya.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 29A" judul="Jadwal Kegiatan Harian TK dan KB" />
+  <JadwalTimeline judul="Jadwal Harian TK (07.30 – 11.00)" items={jadwalTk} />
+  <JadwalTimeline judul="Jadwal Harian KB (07.30 – 10.30)" items={jadwalKb} />
+
+  <PasalHeading pasal="Pasal 30" judul="Program Unggulan Khusus KB-TK" />
+  <ul>
+    <li><strong>Qiroah, Literasi Pagi, Numerasi Pagi</strong> — pembiasaan harian untuk mengembangkan kemampuan membaca Al-Qur'an, literasi, dan numerasi melalui kegiatan yang menyenangkan, terarah, dan sesuai tahap perkembangan anak.</li>
+    <li><strong>Kelas Inspirasi</strong> — melibatkan orang tua/wali murid sebagai guru tamu untuk mengenalkan berbagai profesi, keterampilan, dan bidang kehidupan; memperluas wawasan anak dan menghubungkan pembelajaran dengan kehidupan nyata.</li>
+    <li><strong>Mini Proyek</strong> — pembelajaran berbasis proyek: anak mengamati, bertanya, mencoba, berkarya, dan mempresentasikan hasil karyanya untuk mengembangkan kreativitas, kemandirian, berpikir kritis, dan kerja sama.</li>
+    <li><strong>Outing Class</strong> — pembelajaran di luar lingkungan sekolah melalui kunjungan ke tempat-tempat edukatif; memberi pengalaman belajar langsung dan mengembangkan keterampilan sosial.</li>
+    <li><strong>Family Gathering</strong> — kebersamaan peserta didik, orang tua/wali, dan sekolah untuk mempererat silaturahmi dan membangun sinergi keluarga–sekolah.</li>
+    <li><strong>Puncak Karya</strong> — kegiatan puncak pembelajaran: ananda menampilkan bakat, kreativitas, dan hasil belajar selama satu tahun ajaran, membangun percaya diri dan keberanian tampil di depan umum.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 31" judul="Bimbingan Peserta Didik KB-TK" />
+  <ol>
+    <li>Setiap siswa mendapatkan pendampingan dari wali kelas sebagai pendamping utama.</li>
+    <li>Wali kelas melakukan evaluasi karakter harian dan komunikasi rutin dengan orang tua.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 19–21" judul="Lingkungan, Fasilitas, dan Keamanan Siswa" />
+  <h3>Kebersihan dan kerapian lingkungan</h3>
+  <ul>
+    <li>Setiap siswa bertanggung jawab menjaga kebersihan dan kerapian kelas, toilet, mushola, dan seluruh area sekolah.</li>
+    <li>Siswa wajib membuang sampah pada tempatnya dan memilah sampah sesuai jenisnya.</li>
+    <li>Siswa wajib memakai alas kaki/kaos kaki yang ditetapkan sekolah.</li>
+    <li>Siswa tidak diperbolehkan mencoret-coret dinding, meja, kursi, atau fasilitas sekolah lainnya.</li>
+  </ul>
+  <h3>Penggunaan fasilitas sekolah</h3>
+  <ul>
+    <li>Siswa menggunakan fasilitas sekolah berupa permainan indoor dan permainan outdoor.</li>
+    <li>Kerusakan fasilitas akibat kelalaian atau kesengajaan siswa menjadi tanggung jawab siswa dan orang tua.</li>
+    <li>Siswa menjaga keamanan barang bawaan pribadi. Sekolah tidak bertanggung jawab atas kehilangan barang berharga yang tidak dititipkan.</li>
+  </ul>
+  <h3>Keamanan dan perlindungan siswa</h3>
+  <ul>
+    <li>Siswa dilarang meninggalkan area sekolah selama jam sekolah tanpa izin resmi dari guru/kepala sekolah.</li>
+    <li>Penjemputan di luar jam biasa hanya dilayani untuk penjemput yang <strong>tercatat dalam data siswa</strong> di sekolah.</li>
+    <li>Tamu yang hendak menemui siswa wajib melapor ke security.</li>
+    <li>Siswa yang merasa mendapatkan ancaman, intimidasi, atau perlakuan tidak menyenangkan wajib melapor kepada wali kelas, guru pendamping, atau kepala sekolah.</li>
+    <li>Sekolah berkomitmen menciptakan lingkungan <strong>bebas bullying dan bebas kekerasan</strong> dalam segala bentuknya.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 32" judul="Ketentuan Kepulangan dan Penjemputan" />
+  <ul>
+    <li>Siswa dipulangkan sesuai jadwal yang telah ditetapkan oleh sekolah.</li>
+    <li>Orang tua/wali yang menjemput wajib menunggu di area penjemputan yang telah ditentukan.</li>
+    <li>Orang tua/wali wajib membawa <strong>kartu tanda penjemput</strong> saat menjemput siswa.</li>
+    <li>Siswa KB-TK <strong>dilarang pulang sendiri</strong>, kecuali mendapatkan izin tertulis dari orang tua yang sudah terdaftar.</li>
+    <li>Perubahan penjemput wajib dikonfirmasi kepada wali kelas melalui Dinar App atau telepon resmi sekolah.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 29" judul="Ketentuan Libur Sekolah dan Cuti Bersama" />
+  <ul>
+    <li>Libur sekolah saat cuti bersama hanya berlaku untuk cuti bersama <strong>hari keagamaan Islam</strong> dalam Kalender Nasional.</li>
+    <li>Hari keagamaan Islam yang dimaksud meliputi: Idul Fitri, Idul Adha, Isra' Mi'raj, Tahun Baru Islam, dan Maulid Nabi Muhammad SAW.</li>
+    <li>Cuti bersama yang bersifat non-keagamaan atau berkaitan dengan hari besar agama lain <strong>tidak otomatis</strong> menjadi hari libur sekolah dan tetap mengacu pada kalender akademik Al Akhyar yang berlaku.</li>
+    <li>Informasi resmi jadwal libur dan cuti bersama disampaikan melalui Dinar App di awal tahun ajaran dan diperbarui sewaktu-waktu bila terdapat perubahan dari pemerintah.</li>
+  </ul>
+</RuleLayout>

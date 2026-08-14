@@ -1,0 +1,36 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PoinkuBody from '../../components/shared/PoinkuBody.astro';
+
+const ringanExtra = [
+  'Bermain bola di dalam kelas dan di lingkungan sekolah yang tidak sesuai peruntukannya (koridor, musholla, kantin, Lab IPA, Lab Komputer)',
+  'Tidak mengikuti upacara tanpa alasan yang sah',
+  'Panjang rambut siswa putra tidak sesuai aturan',
+  'Tidak menggunakan helm berstandar SNI',
+];
+const sedangExtra = [
+  'Menampakkan aurat atau menggunakan pakaian ketat yang menampakkan lekuk tubuh',
+];
+const poinUnggul = [
+  { capaian: 'Juara lomba tingkat kota', poin: '+10 poin' },
+  { capaian: 'Juara lomba tingkat provinsi', poin: '+20 poin' },
+  { capaian: 'Juara lomba tingkat nasional', poin: '+30 poin' },
+  { capaian: 'Aktif OSIS / organisasi sekolah', poin: '+5 poin' },
+  { capaian: 'Perilaku terpuji yang diakui warga sekolah', poin: '+10 poin' },
+  { capaian: 'Nilai rapor tertinggi di kelas dalam satu semester', poin: '+12 poin' },
+  { capaian: 'Duta sekolah dalam kegiatan non-lomba luring (seminar/diklat)', poin: '+10 poin' },
+  { capaian: 'Tidak pernah absen dalam satu semester', poin: '+10 poin' },
+];
+---
+
+<RuleLayout unit="smp" slug="poinku">
+  <IntiAturan>
+    <li>Setiap siswa memulai dengan <strong>Poin Akhlak 100</strong> dan <strong>Poin Unggul 0</strong>.</li>
+    <li>Pelanggaran mengurangi Poin Akhlak; prestasi menambah Poin Unggul.</li>
+    <li>Status kartu (Green s.d. Black) menentukan bentuk pembinaan yang diterima siswa.</li>
+    <li>Semua perubahan poin tercatat di Dinar App dan diberitahukan real-time ke orang tua.</li>
+  </IntiAturan>
+
+  <PoinkuBody ringanExtra={ringanExtra} sedangExtra={sedangExtra} poinUnggul={poinUnggul} />
+</RuleLayout>

@@ -1,0 +1,46 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+import TahfidzTable from '../../components/shared/TahfidzTable.astro';
+import AdabSection from '../../components/shared/AdabSection.astro';
+import LaranganSyariat from '../../components/shared/LaranganSyariat.astro';
+---
+
+<RuleLayout unit="sd" slug="ibadah-dan-akhlak">
+  <IntiAturan>
+    <li>Sholat Dhuha, Dzuhur, dan Ashar <strong>berjamaah di sekolah</strong>; Jumat: Sholat Jumat di Masjid An Nida.</li>
+    <li>Target tahfidz SD: <strong>2 Juz Al-Qur'an</strong> dengan metode Sabaq–Sabqi–Manzil.</li>
+    <li>Salam, sopan santun, dan adab Islami wajib dijaga kepada semua warga sekolah.</li>
+    <li>Pelanggaran moral berat (kekerasan, bullying, pornografi, mencuri) berakibat sidang kesiswaan.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 4" judul="Kewajiban Ibadah Harian" />
+  <ol>
+    <li>Seluruh siswa wajib mengikuti <strong>Sholat Dhuha berjamaah</strong> dan pembiasaan pagi.</li>
+    <li>Seluruh siswa wajib mengikuti <strong>Sholat Dzuhur dan Ashar berjamaah</strong> di sekolah.</li>
+    <li>Pada hari Jumat, seluruh siswa mengikuti <strong>Sholat Jumat berjamaah</strong> di Masjid An Nida.</li>
+    <li>Siswa yang tidak mengikuti sholat berjamaah tanpa alasan yang sah akan mendapat catatan Poinku.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 5" judul="Program Tahfidz Al-Qur'an" />
+  <p>
+    Seluruh siswa wajib mengikuti program Tahfidz Al-Qur'an yang terintegrasi dalam
+    jadwal harian. Target minimal hafalan per jenjang:
+  </p>
+  <TahfidzTable active="sd" />
+  <ul>
+    <li>Perkembangan hafalan dicatat dan dapat dipantau melalui fitur Monitoring Hafalan di Dinar App.</li>
+    <li>Siswa yang melampaui target hafalan mendapatkan apresiasi melalui <strong>Program Beasiswa Tahfidz</strong>.</li>
+  </ul>
+  <p class="text-[14px] text-slate-500">
+    Detail sistem Beasiswa Tahfidz tersedia di Panduan Kurikulum: <a href="https://booklet.alakhyar.sch.id/kurikulum" target="_blank" rel="noopener">booklet.alakhyar.sch.id/kurikulum</a>
+  </p>
+
+  <PasalHeading pasal="Pasal 6" judul="Adab dan Akhlak Islami" />
+  <p>Setiap siswa wajib:</p>
+  <AdabSection />
+
+  <PasalHeading pasal="Pasal 7" judul="Larangan Terkait Moral dan Syariat" />
+  <LaranganSyariat />
+</RuleLayout>

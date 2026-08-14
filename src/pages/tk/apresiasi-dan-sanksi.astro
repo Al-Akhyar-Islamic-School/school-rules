@@ -1,0 +1,86 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+
+// Alur pembinaan versi KB-TK (Pasal 27) — 6 tahap, tanpa sistem Poinku,
+// sehingga tidak memakai komponen shared/PembinaanBertahap (7 tahap SD-SMA).
+const TAHAP = [
+  'Teguran lisan oleh guru yang bersangkutan',
+  'Peringatan tertulis',
+  'Konseling wali kelas dan pemberitahuan ke orang tua',
+  'Pemanggilan orang tua dan penandatanganan surat pernyataan',
+  'Pembinaan tim kesiswaan dan kepala sekolah',
+  'Sidang kesiswaan (untuk pelanggaran berat)',
+];
+const PRINSIP = [
+  { n: 'Proporsional', k: 'Konsekuensi sesuai tingkat dan jenis pelanggaran.' },
+  { n: 'Edukatif', k: 'Setiap konsekuensi mengandung unsur refleksi dan perbaikan diri.' },
+  { n: 'Restoratif', k: 'Mendorong siswa memahami dampak perbuatannya dan memulihkan hubungan.' },
+  { n: 'Suportif', k: 'Orang tua selalu dilibatkan sebagai mitra pembinaan.' },
+  { n: 'Rahasia', k: 'Proses pembinaan dijaga kerahasiaannya demi martabat siswa.' },
+];
+---
+
+<RuleLayout unit="tk" slug="apresiasi-dan-sanksi">
+  <IntiAturan>
+    <li>Pembinaan berjalan <strong>bertahap dan proporsional</strong>: dari teguran lisan hingga sidang kesiswaan.</li>
+    <li>Skorsing diputuskan kepala sekolah; pengeluaran siswa adalah keputusan terakhir yayasan.</li>
+    <li>Prinsipnya: proporsional, edukatif, restoratif, suportif, dan rahasia.</li>
+    <li>Apresiasi hasil belajar ananda dirayakan melalui <strong>Puncak Karya</strong> di akhir tahun ajaran — lihat halaman <a href="/tk/jadwal-dan-program/">Jadwal &amp; Program</a>.</li>
+  </IntiAturan>
+
+  <PasalHeading pasal="Pasal 27" judul="Mekanisme Pembinaan Bertahap" />
+  <p>Pembinaan dilakukan secara bertahap dan proporsional sesuai tingkat pelanggaran:</p>
+  <ol class="not-prose my-5 space-y-0 list-none pembinaan-steps">
+    {
+      TAHAP.map((t, i) => (
+        <li class="flex gap-4 pb-4 relative">
+          <span
+            class="w-8 h-8 rounded-full text-white text-[13px] font-bold flex items-center justify-center shrink-0 relative z-10"
+            style="background: var(--unit)"
+          >
+            {i + 1}
+          </span>
+          <p class="text-[15px] leading-relaxed pt-1">{t}</p>
+        </li>
+      ))
+    }
+  </ol>
+  <ul>
+    <li><strong>Skorsing</strong> diputuskan oleh kepala sekolah setelah melalui sidang kesiswaan.</li>
+    <li><strong>Rekomendasi pengeluaran dari sekolah</strong> merupakan keputusan terakhir yang diambil yayasan setelah semua upaya pembinaan tidak berhasil.</li>
+  </ul>
+
+  <PasalHeading pasal="Pasal 28" judul="Prinsip Pembinaan Al Akhyar" />
+  <blockquote class="not-prose rounded-[14px] p-5 my-6 text-center" style="background: var(--unit-soft);">
+    <p class="font-display font-semibold text-ink text-[16px] leading-relaxed">
+      “Setiap anak berhak mendapatkan kesempatan tumbuh dan berkembang.
+      Konsekuensi hadir bukan untuk menghukum, melainkan untuk membimbing.”
+    </p>
+    <p class="text-[12px] font-bold uppercase tracking-[0.08em] text-slate-500 mt-2">Filosofi Kesiswaan Al Akhyar</p>
+  </blockquote>
+  <p>Setiap konsekuensi dirancang sebagai bagian dari proses pendidikan, bukan sekadar hukuman. Prinsip yang berlaku:</p>
+  <div class="not-prose grid sm:grid-cols-2 gap-3 my-5">
+    {
+      PRINSIP.map((p) => (
+        <div class="rounded-[14px] border border-slate-200 bg-white p-4">
+          <p class="font-bold text-ink text-[14.5px]">{p.n}</p>
+          <p class="text-[13.5px] text-slate-500 mt-1 leading-relaxed">{p.k}</p>
+        </div>
+      ))
+    }
+  </div>
+</RuleLayout>
+
+<style>
+  .pembinaan-steps li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    bottom: -8px;
+    width: 2px;
+    background: var(--unit-100);
+  }
+</style>

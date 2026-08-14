@@ -1,0 +1,17 @@
+---
+// Judul seksi dengan eyebrow "Pasal N" — nomor pasal dokumen asli
+// dipertahankan sebagai metadata, judul memakai bahasa topikal.
+interface Props {
+  pasal?: string; // "Pasal 5" atau "Pasal 5–7"
+  judul: string;
+  id?: string;
+}
+const { pasal, judul, id } = Astro.props;
+---
+
+<div class="mt-11 mb-4" id={id}>
+  {pasal && <p class="eyebrow-unit mb-1">{pasal}</p>}
+  <h2 class="font-display font-bold text-[21px] leading-snug text-ink" style="scroll-margin-top:120px">
+    {judul}
+  </h2>
+</div>

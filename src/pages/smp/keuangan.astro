@@ -1,0 +1,121 @@
+---
+import RuleLayout from '../../layouts/RuleLayout.astro';
+import IntiAturan from '../../components/IntiAturan.astro';
+import PasalHeading from '../../components/PasalHeading.astro';
+---
+
+<RuleLayout unit="smp" slug="keuangan">
+  <IntiAturan>
+    <li>SPP dibayarkan <strong>paling lambat tanggal 25</strong> setiap bulan melalui rekening resmi yayasan.</li>
+    <li>Tunggakan SPP <strong>2 bulan atau lebih</strong>: kartu ujian tidak muncul di Dinar App.</li>
+    <li>Kesulitan keuangan? Segera hubungi sekolah — <strong>kesepakatan cicilan resmi</strong> menjaga hak akademik anak tetap utuh.</li>
+    <li>Tersedia Beasiswa Tahfidz, Beasiswa Unggul, dan Beasiswa Sosial/Dhuafa.</li>
+  </IntiAturan>
+
+  <blockquote class="not-prose rounded-[14px] p-5 my-6" style="background: var(--color-amber-100); border-left: 4px solid var(--color-amber-500);">
+    <p class="font-bold text-[14px] mb-1" style="color: var(--color-amber-600);">Perhatian Penting</p>
+    <p class="text-[14.5px] leading-relaxed" style="color: var(--color-amber-600);">
+      Kelancaran administrasi keuangan berkaitan langsung dengan hak-hak akademik siswa,
+      termasuk akses ujian, kegiatan sekolah, dan pengambilan dokumen resmi. Sekolah
+      menerapkan kebijakan ini secara konsisten demi keberlangsungan mutu layanan pendidikan.
+    </p>
+  </blockquote>
+
+  <PasalHeading pasal="Pasal 20" judul="Jenis Kewajiban Keuangan" />
+  <table class="table-rule">
+    <caption class="sr-only">Jenis biaya sekolah dan periode pembayarannya</caption>
+    <thead>
+      <tr><th>Jenis Biaya</th><th>Periode</th><th>Keterangan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Jenis"><strong>SPP</strong> (Sumbangan Pembinaan Pendidikan)</td>
+        <td data-label="Periode">Bulanan</td>
+        <td data-label="Keterangan">Paling lambat tanggal 25 setiap bulan</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Uang Tahunan / Dana Pengembangan</td>
+        <td data-label="Periode">Tahunan (awal tahun ajaran)</td>
+        <td data-label="Keterangan">Sesuai kesepakatan awal pendaftaran</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Biaya Seragam</td>
+        <td data-label="Periode">Saat penerimaan / penggantian</td>
+        <td data-label="Keterangan">Sesuai ketentuan Panduan Seragam unit</td>
+      </tr>
+      <tr>
+        <td data-label="Jenis">Biaya Buku &amp; Perlengkapan</td>
+        <td data-label="Periode">Awal semester / sesuai kebutuhan</td>
+        <td data-label="Keterangan">Sesuai daftar yang diterbitkan sekolah</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <PasalHeading pasal="Pasal 21" judul="Mekanisme Pembayaran" />
+  <ol>
+    <li>Pembayaran dilakukan melalui <strong>rekening resmi Yayasan Pendidikan Islam Al Akhyar</strong> yang diinformasikan melalui Dinar App.</li>
+    <li>Bukti pembayaran diunggah melalui fitur keuangan di Dinar App atau dikonfirmasi langsung ke bagian administrasi sekolah.</li>
+    <li>Kwitansi resmi diterbitkan bendahara sekolah setelah pembayaran diverifikasi.</li>
+    <li>Batas waktu pembayaran SPP adalah <strong>tanggal 25</strong>. Melewati tanggal tersebut otomatis berstatus tunggakan.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 22" judul="Dampak Tunggakan terhadap Hak Akademik" />
+  <p>Orang tua/wali siswa yang memiliki tunggakan akan diberi tahu secara berkala melalui Dinar App.</p>
+  <table class="table-rule">
+    <caption class="sr-only">Dampak tunggakan berdasarkan lamanya</caption>
+    <thead>
+      <tr><th>Kondisi Tunggakan</th><th>Dampak</th><th>Catatan</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Kondisi">SPP ≤ 1 bulan</td>
+        <td data-label="Dampak">Pemberitahuan via Dinar App</td>
+        <td data-label="Catatan">Tidak ada pembatasan hak akademik</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi"><strong>SPP 2–3 bulan</strong></td>
+        <td data-label="Dampak">Kartu ujian tidak muncul di Dinar App; pemanggilan orang tua</td>
+        <td data-label="Catatan">Hak ujian dipulihkan setelah pelunasan atau kesepakatan cicilan</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi"><strong>SPP &gt; 3 bulan</strong></td>
+        <td data-label="Dampak">Pembatasan akses kegiatan berbayar; tidak dapat mengambil rapor</td>
+        <td data-label="Catatan">Wajib menghadap kepala sekolah &amp; bendahara untuk solusi</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi">Tunggakan uang kegiatan</td>
+        <td data-label="Dampak">Tidak dapat mengikuti kegiatan terkait</td>
+        <td data-label="Catatan">Kegiatan: outing, camp, olimpiade, dll.</td>
+      </tr>
+      <tr>
+        <td data-label="Kondisi">Tunggakan saat akhir tahun</td>
+        <td data-label="Dampak">Ijazah dan dokumen resmi ditahan hingga lunas</td>
+        <td data-label="Catatan">Berlaku untuk kelas akhir jenjang</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-[14px] text-slate-500">
+    Kartu ujian siswa hanya muncul di Dinar App apabila seluruh kewajiban keuangan lunas
+    atau telah ada kesepakatan resmi dengan pihak sekolah.
+  </p>
+
+  <PasalHeading pasal="Pasal 23" judul="Prosedur Penyelesaian Tunggakan" />
+  <ol>
+    <li>Orang tua yang mengalami kesulitan keuangan dianjurkan <strong>segera menghubungi</strong> kepala sekolah atau bendahara sebelum tunggakan bertambah.</li>
+    <li>Sekolah membuka kemungkinan cicilan atau penundaan pembayaran berdasarkan permohonan tertulis dan kondisi yang dapat diverifikasi.</li>
+    <li>Kesepakatan cicilan dibuat tertulis dan ditandatangani orang tua dan kepala sekolah.</li>
+    <li>Siswa dengan kesepakatan cicilan resmi <strong>tidak mengalami pembatasan hak akademik</strong> selama kesepakatan dipatuhi.</li>
+  </ol>
+
+  <PasalHeading pasal="Pasal 24" judul="Beasiswa dan Keringanan Biaya" />
+  <ul>
+    <li><strong>Beasiswa Tahfidz</strong> — potongan SPP bagi siswa yang mencapai/melampaui target hafalan dengan status Poin Akhlak Green Card.</li>
+    <li><strong>Beasiswa Unggul</strong> — apresiasi atas prestasi akademik dan non-akademik tertinggi.</li>
+    <li><strong>Beasiswa Sosial/Dhuafa</strong> — keringanan biaya bagi keluarga yang membutuhkan, melalui proses verifikasi.</li>
+    <li><strong>Beasiswa lain</strong> — sesuai kebijakan unit/yayasan.</li>
+  </ul>
+  <ol>
+    <li>Permohonan beasiswa diajukan melalui formulir resmi kepada kepala sekolah pada awal tahun ajaran atau sesuai jadwal yang ditetapkan.</li>
+    <li>Status beasiswa ditinjau setiap semester; penerima yang tidak lagi memenuhi syarat diberi tahu secara tertulis.</li>
+  </ol>
+</RuleLayout>

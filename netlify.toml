@@ -1,0 +1,51 @@
+# ============================================================
+# Konfigurasi Netlify — Peraturan Sekolah Al Akhyar
+# Astro statis; output di dist/.
+# ============================================================
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  # Lewati build untuk commit yang hanya menyentuh dokumen/referensi —
+  # hemat kredit build Netlify (pola sama dengan alakhyar-web).
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)README.md' ':(exclude)NOTES-KONFIRMASI.md' ':(exclude)content-reference/' ':(exclude).gitignore'"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
+
+[context.deploy-preview]
+  ignore = "exit 0"
+[context.branch-deploy]
+  ignore = "exit 0"
+
+# ------------------------------------------------------------
+# Header keamanan untuk SEMUA path.
+# Sengaja "/*", bukan "/*.html": pola Netlify dicocokkan ke path
+# permintaan, bukan berkas hasil resolve — "/" tidak cocok dengan
+# "/*.html" (gotcha yang sama dengan situs kurikulum).
+# frame-ancestors mengizinkan Dinar App membingkai situs ini.
+# ------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "frame-ancestors 'self' https://dinar.alakhyar.sch.id https://staging.dinar.alakhyar.sch.id http://localhost:3000"
+
+# Aset ber-hash dari Astro: aman di-cache selamanya.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Aset statis lain (logo, foto, favicon) — cache 30 hari.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Halaman HTML: selalu divalidasi agar update konten langsung terlihat.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

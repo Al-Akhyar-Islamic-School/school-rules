@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { units } from '../data/units';
+---
+
+<BaseLayout title="Halaman Tidak Ditemukan" description="Halaman yang Anda cari tidak ditemukan.">
+  <div class="container-ak text-center py-24">
+    <p class="font-display font-bold text-[64px] text-primary-200 leading-none">404</p>
+    <h1 class="font-display font-bold text-[24px] text-ink mt-4">Halaman Tidak Ditemukan</h1>
+    <p class="text-slate-500 mt-2 max-w-[420px] mx-auto">
+      Halaman yang Anda tuju mungkin sudah dipindahkan. Silakan mulai dari beranda
+      atau pilih unit di bawah ini.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 mt-8">
+      <a href="/" class="btn btn-primary">Ke Beranda</a>
+      {units.map((u) => <a href={`/${u.slug}/`} class="btn btn-ghost">{u.nama}</a>)}
+    </div>
+  </div>
+</BaseLayout>

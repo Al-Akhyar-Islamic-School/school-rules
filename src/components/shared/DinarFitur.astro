@@ -1,0 +1,22 @@
+---
+// Fitur utama Dinar App yang wajib dimanfaatkan orang tua — identik antar unit.
+const FITUR = [
+  { n: 'E-Rapor', k: 'Laporan perkembangan belajar akademik dan karakter.' },
+  { n: 'E-Absent', k: 'Pemantauan kehadiran real-time dengan notifikasi otomatis.' },
+  { n: 'Monitoring Hafalan', k: 'Perkembangan hafalan Al-Qur’an dan Hadits.' },
+  { n: 'Poinku Digital', k: 'Poin Akhlak dan Poin Unggul ananda.' },
+  { n: 'Kanal Informasi', k: 'Pengumuman, edaran, dan pesan resmi sekolah/wali kelas.' },
+  { n: 'Pengajuan Izin', k: 'Permohonan ketidakhadiran siswa secara digital.' },
+];
+---
+
+<div class="not-prose grid sm:grid-cols-2 gap-3 my-5">
+  {
+    FITUR.map((f) => (
+      <div class="rounded-[14px] border border-slate-200 bg-white p-4">
+        <p class="font-bold text-ink text-[14.5px]">{f.n}</p>
+        <p class="text-[13.5px] text-slate-500 mt-1 leading-relaxed">{f.k}</p>
+      </div>
+    ))
+  }
+</div>
