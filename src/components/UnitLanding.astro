@@ -12,14 +12,10 @@ interface Props {
   unit: UnitSlug;
 }
 
-const logos = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/logo-*.png',
-  { eager: true }
-);
+import logoMark from '../assets/logo-mark.png';
 
 const unit = getUnit(Astro.props.unit);
 const pages = unitPages(unit);
-const logo = logos[`../assets/${unit.logo}.png`]?.default;
 ---
 
 <BaseLayout
@@ -38,13 +34,9 @@ const logo = logos[`../assets/${unit.logo}.png`]?.default;
     <div class="container-ak py-10 sm:py-14 relative">
       <div class="max-w-[820px]">
         <div class="flex items-center gap-4 mb-5">
-          {
-            logo && (
-              <div class="bg-white rounded-[14px] p-2 shadow-md shrink-0">
-                <Image src={logo} alt={`Logo ${unit.lengkap}`} width={160} height={90} class="h-11 w-auto" loading="eager" />
-              </div>
-            )
-          }
+          <div class="bg-white rounded-full p-1.5 shadow-md shrink-0">
+            <Image src={logoMark} alt={`Logo ${unit.lengkap}`} width={112} height={112} class="h-12 w-12" loading="eager" />
+          </div>
           <div>
             <p class="text-white/75 text-[12px] font-bold uppercase tracking-[0.08em]">
               Peraturan Sekolah · TA 2026/2027

@@ -124,7 +124,6 @@ export interface Unit {
   kelas: string;
   warna: string; // hex — konvensi jenjang design system
   kepala: string;
-  logo: string; // nama file di src/assets
   foto: string;
   deskripsi: string;
   quickFacts: { label: string; nilai: string; icon: string }[];
@@ -139,7 +138,6 @@ export const units: Unit[] = [
     kelas: 'Usia 2–6 tahun',
     warna: '#ec2a6b',
     kepala: 'Amaliah Maisurah, S.K.M',
-    logo: 'logo-tk',
     foto: 'jenjang-tk',
     deskripsi:
       'Peraturan KB-TK Islam Al Akhyar: pembiasaan ibadah, kemandirian, dan kemitraan erat dengan orang tua untuk ananda usia dini.',
@@ -167,7 +165,6 @@ export const units: Unit[] = [
     kelas: 'Kelas 1–6',
     warna: '#006195',
     kepala: 'Nurmaladewi, S.E., Gr',
-    logo: 'logo-sd',
     foto: 'jenjang-sd',
     deskripsi:
       'Peraturan SD Islam Al Akhyar: kedisiplinan fullday school, sistem Poinku, tahfidz, dan pembinaan karakter kelas 1–6.',
@@ -197,7 +194,6 @@ export const units: Unit[] = [
     kelas: 'Kelas 7–9',
     warna: '#1b93c6',
     kepala: 'Baharuddin, Lc., S.H., Gr',
-    logo: 'logo-smp',
     foto: 'jenjang-smp',
     deskripsi:
       'Peraturan SMP Islam Al Akhyar: kemandirian remaja, sistem Poinku, ketentuan kendaraan, dan pembinaan organisasi kelas 7–9.',
@@ -227,7 +223,6 @@ export const units: Unit[] = [
     kelas: 'Kelas 10–12',
     warna: '#2fa97b',
     kepala: 'Nur Aeni HM, S.Si., M.Si., Gr',
-    logo: 'logo-sma',
     foto: 'jenjang-sma',
     deskripsi:
       'Peraturan SMA Islam Al Akhyar: tanggung jawab menuju dewasa, sistem Poinku, persiapan SNBT, dan ketentuan kendaraan kelas 10–12.',

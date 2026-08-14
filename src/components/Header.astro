@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo-sekolah.png';
+import logo from '../assets/logo-mark.png';
 import { site, units } from '../data/units';
 
 const path = Astro.url.pathname;
@@ -18,7 +18,7 @@ const navItems = [
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200">
   <div class="container-ak flex items-center justify-between h-16 gap-4">
     <a href="/" class="flex items-center gap-2.5 shrink-0">
-      <Image src={logo} alt={site.sekolah} width={144} height={81} class="h-9 w-auto" loading="eager" />
+      <Image src={logo} alt={site.sekolah} width={96} height={96} class="h-10 w-10" loading="eager" />
       <span class="flex flex-col leading-tight">
         <span class="text-[11px] sm:text-[12px] font-medium text-slate-500 tracking-[0.02em]">{site.sekolah}</span>
         <span class="font-extrabold text-ink text-[14px] sm:text-[15px]">Peraturan Sekolah</span>
