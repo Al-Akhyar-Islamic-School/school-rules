@@ -26,7 +26,7 @@ sumber direvisi/dipublikasikan ulang.
 | 4 | SD | `[XX] hari` batas pengembalian surat pernyataan; `[Nomor HP Piket]`; `[Biaya lain sesuai unit]` | Tidak dimuat / ditulis "—" |
 | 5 | TK | Tabel tunggakan tidak punya baris "2–3 bulan", padahal Lampiran 1 TK menyebut tunggakan 2 bulan → kartu ujian hilang | Web mengikuti tabel dokumen TK apa adanya |
 | 6 | Antar-unit | Kebijakan hadiah guru bertentangan: TK/SD melarang mutlak; SMP membolehkan saat penamatan kelas 9 / Hari Guru; SMA tidak mengatur | Web menampilkan sesuai dokumen masing-masing unit |
-| 7 | Antar-unit | Tautan kurikulum tidak seragam: `booklet.alakhyar.sch.id/kurikulum` (TK/SD/SMP) vs `kurikulum.alakhyar.sch.id` (SMA) | Web memakai `booklet.alakhyar.sch.id/kurikulum` sesuai dokumen; keduanya hidup |
+| 7 | Antar-unit | Tautan kurikulum tidak seragam: `booklet.alakhyar.sch.id/kurikulum` (TK/SD/SMP) vs `kurikulum.alakhyar.sch.id` (SMA) | **Sudah diputuskan (15 Agu 2026):** `booklet.../kurikulum` deprecated — web memakai `kurikulum.alakhyar.sch.id` di semua unit. Dokumen sumber TK/SD/SMP perlu ikut diperbarui |
 | 8 | SMP/SMA | Lampiran 1 tidak punya seksi G (persetujuan publikasi foto/video) seperti SD — padahal sekolah mempublikasikan foto semua unit | Kebijakan foto hanya dimuat di halaman SD |
 
 ## Konsistensi lain (informasi)
