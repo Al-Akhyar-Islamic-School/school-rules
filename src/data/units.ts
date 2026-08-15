@@ -171,7 +171,7 @@ export const units: Unit[] = [
     quickFacts: [
       { label: 'Jam Sekolah', nilai: '07.00–15.20', icon: 'clock' },
       { label: 'Ponsel Siswa', nilai: 'Dilarang, kecuali izin khusus orang tua & kepala sekolah', icon: 'smartphone' },
-      { label: 'SPP', nilai: 'Jatuh tempo tanggal 5 setiap bulan', icon: 'wallet' },
+      { label: 'SPP', nilai: 'Jatuh tempo tanggal 25 setiap bulan', icon: 'wallet' },
       { label: 'Batas Alpha', nilai: 'Maksimal 10 hari per semester', icon: 'calendar-check' },
     ],
     pages: [

@@ -34,3 +34,4 @@ sumber direvisi/dipublikasikan ulang.
 - SD satu-satunya unit dengan pasal UKS dan pasal publikasi foto/video.
 - Poin Unggul berbeda skala per unit (SD +5/+10; SMP hingga +30; SMA +5/+20) — memang by design, sudah sesuai dokumen.
 - TK: pembayaran via Virtual Account; SD: rekening yayasan; SMP/SMA: tanggal 25 — sesuai dokumen masing-masing.
+- **Koreksi (15 Agu 2026):** dokumen sumber SD menulis jatuh tempo SPP **tanggal 5** (Pasal 20 & 21) — dikonfirmasi keliru; yang benar **tanggal 25**. Web sudah diperbaiki; dokumen DOCX SD perlu ikut direvisi.
