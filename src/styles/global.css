@@ -279,7 +279,7 @@ body {
   color: var(--color-ink);
   font-weight: 700;
 }
-.prose-rule a {
+.prose-rule a:not(.not-prose *) {
   color: var(--color-primary-500);
   font-weight: 600;
   text-decoration: underline;

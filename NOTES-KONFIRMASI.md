@@ -4,6 +4,10 @@ Daftar temuan pada dokumen sumber (folder "Peraturan Sekolah") beserta perlakuan
 di situs web. Item **butuh keputusan** sebaiknya dikonfirmasi sebelum dokumen
 sumber direvisi/dipublikasikan ulang.
 
+> **Status (15 Agu 2026):** dokumen DOCX sumber dinyatakan usang oleh sekolah;
+> situs web ini menjadi acuan yang lebih mutakhir. Daftar di bawah tetap berguna
+> sebagai checklist saat dokumen resmi direvisi berikutnya.
+
 ## Diperbaiki langsung di web (kerusakan jelas)
 
 | # | Dokumen | Temuan | Perlakuan di web |
